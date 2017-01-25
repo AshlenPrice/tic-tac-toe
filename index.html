@@ -64,9 +64,64 @@
 
 <!-- in this section is the auth forms.
 figure out how to get the auth form into the modal -->
+<form id="sign-up">
+  <fieldset>
+    <legend>Sign up!</legend>
+    <label>
+      Email
+      <input type="text" name="credentials[email]">
+    </label>
+    <label>
+      Password
+      <input type="password" name="credentials[password]">
+    </label>
+    <label>
+      Password Confirmation
+      <input type="password" name="credentials[password_confirmation]">
+    </label>
+    <input type="submit" name="submit" value="Sign up!">
+  </fieldset>
+</form>
+
+<form id="sign-in">
+  <fieldset>
+    <legend>Sign In!</legend>
+    <label>
+      Email
+      <input type="text" name="credentials[email]">
+    </label>
+    <label>
+      Password
+      <input type="password" name="credentials[password]">
+    </label>
+    <input type="submit" name="submit" value="Sign In!">
+  </fieldset>
+</form>
+
+<form id="change-password">
+  <fieldset>
+    <legend>Change Password!</legend>
+    <label>
+      Current Password
+      <input type="password" type="current password" name="credentials[old]">
+    </label>
+    <label>
+      New Password
+      <input type="password" type="new password" name="credentials[new]">
+    </label>
+    <input  type="submit" name="submit" value="Change Password!">
+  </fieldset>
+</form>
+
+<form id="sign-out">
+  <fieldset>
+  <legend>Sign Out!</legend>
+  <input type="submit" name="submit" value="Sign Out!">
+  </fieldset>
+</form>
 
 
-
+<!-- These are the containers for the gamboard.  -->
             <div class="container">
               <!-- Try making an evenly spaced 3x3 grid. -->
               <div class="row">
