@@ -26,7 +26,6 @@ const Game = function () {
 
 //establish a turn counter-- DO I EVEN NEED A TURN COUNTER?
 
-
 /*Game states/statuses
   not started
   inProgress
@@ -38,28 +37,53 @@ const Game = function () {
 //establishes who moves.
 Game.prototype.setMove = function (i){
 //is a condition that means is the game space is empty and it allows the rest of the funtion to run.
-  if (this.board[i]=== ''){
-  this.board[i] = this.currentPlayer; // this function should change the player after a move has been made by the opposite player
+  if (this.board[i]){
+    this.board[i] = this.currentPlayer; // this function should change the player after a move has been made by the opposite player
+};
+
+Game.prototype.changePlayer = function (){
   if (this.currentPlayer === 'x'){
       this.currentPlayer = 'o';
-  } else if (this.currentPlayer === 'o'){
+  } else {
       this.currentPlayer = 'x';
   }
-  }
 };
 
+//set a check win function that
 
+//make a postiion store to push to a player
+/* this function should: check for a winner if a player has 3 matching indexes in a row that
+match any of the wins array */
 
-Game.prototype.resetGameBoard = function () {
-  for (let i = 0; this.board.length; i++){
-    this.board[i] = '';
+Game.prototype.winner = function (){
+  let winner = true;
+  for (let i = 0; i>this.wins.length; i++){
+    for(let j = 0; this.wins[i].length; j++){
+      if (this.wins[i][j]==='x'){
+        console.log("winner:x");
+      } else if (this.wins[i][j]==='o'){
+        console.log("winner:o");
+      }
+    }
   }
-
 };
+/*
+  POSSIBLE WAYS TO MAKE THIS WORK
+  - a loop of some sort (forEach,array method findIndex, or find.)
+      if currentPlayer has an []in board === the i of the [] inside the wins[]
+      then console.log(currentPlayer wins );
+  let the winning array
+*/
 
-// Game.prototype.winner = function (i){
-// if (this.wins[i]  ) )};
+//this resets the gameboard.
+  //needs to be tested in node
 
+// Game.prototype.resetGameBoard = function () {
+//   for (let i = 0; this.board.length; i++){
+//     this.board[i] = '';
+//   }
+// }
+// once this works consider adding conditional statement that will check if the board is full return a draw,
 
 // function isMatch(cards) {
 //   // alert winning message
