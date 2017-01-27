@@ -30,15 +30,16 @@ const Game = function () {
 /*Game states/statuses
   not started
   inProgress
-  winner=X O
+  winner= X O
   gameTied
 */
 // create a gameState prototype
 
 //establishes who moves.
 Game.prototype.setMove = function (i){
+//is a condition that means is the game space is empty and it allows the rest of the funtion to run.
   if (this.board[i]=== ''){
-  this.board[i] = this.currentPlayer;
+  this.board[i] = this.currentPlayer; // this function should change the player after a move has been made by the opposite player
   if (this.currentPlayer === 'x'){
       this.currentPlayer = 'o';
   } else if (this.currentPlayer === 'o'){
@@ -48,8 +49,27 @@ Game.prototype.setMove = function (i){
 };
 
 
-// this function should change the player after a move has been made by the opposite player
 
+Game.prototype.resetGameBoard = function () {
+  for (let i = 0; this.board.length; i++){
+    this.board[i] = '';
+  }
+
+};
+
+// Game.prototype.winner = function (i){
+// if (this.wins[i]  ) )};
+
+
+// function isMatch(cards) {
+//   // alert winning message
+//   if (cards[0] === cards[1]) {
+//     alert("You found a match!");
+//   } else {
+//     alert("Sorry, try again.");
+//
+//   }
+// }
 
 // alternate changePlayer function
 // currentPlayer, place X on board. If there is X on board then player2 turn and place O on board
@@ -66,7 +86,7 @@ Game.prototype.setMove = function (i){
 // };
 
 
-//establish player wining or losing
+
 
 
 
@@ -74,12 +94,7 @@ Game.prototype.setMove = function (i){
 //clear the board
 //function that resets the board. Can this be turned into a method?
 
-// const resetGameBoard = function() {
-//   for (let i = 0; board.length; i++) {
-//     board[i] = "";
-//     $('.box').text(''); //box for html boxes
-//   }
-// };
+//
 
 
 //full board function
@@ -101,14 +116,9 @@ Game.prototype.setMove = function (i){
 
 
 
-//global variables
-// let currentPlayer = "X";
 
 
-// //when clicking new game, this runs resetGameBoard function
-//   newGame.on('click', function(){
-//     resetGameBoard();
-//   });
+
 
 
 
