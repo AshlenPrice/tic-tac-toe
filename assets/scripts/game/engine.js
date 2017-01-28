@@ -2,12 +2,7 @@
 
 // Create an array made of the html ids of each box on the grid.  I be used to determine the index of each move.
 // let gameSpaces = ["c0", "c1", "c2", "c3", "c42", "c5", "c6", "c7", "c8"];
-//
 
-//setting global variables
-// let activePlayer = "X";
-// let player1 = "X";
-// let player2 = "O";
 // let newGame = ('#reset');
 
 
@@ -22,6 +17,16 @@ const Game = function () {
                 [0,4,8],[2,4,6] // diag
               ];
 };
+
+
+
+
+Game.prototype.newGame = function () {
+  for (let i = 0; this.board.length; i++){
+    this.board[i] = '';
+  }
+};
+
 
 // Need to determine if the board is full.
 // full board function
@@ -128,10 +133,7 @@ Game.prototype.checkWinner = function (indx, callback) {
 //this resets the gameboard.
   //needs to be tested in node
 
-// Game.prototype.resetGameBoard = function () {
-//   for (let i = 0; this.board.length; i++){
-//     this.board[i] = '';
-//   }
+
 // }
 // once this works consider adding conditional statement that will check if the board is full return a draw,
 
@@ -175,7 +177,21 @@ Game.prototype.checkWinner = function (indx, callback) {
 // setup event listeners : what happens when i clicks in index.js
 // in the events.js setup game handles
 
+function newGame() {
+let newGame = new Game();
+console.log(newGame);
+}
 
+
+
+/*
+TODO
+
+
+
+
+
+*/
 
 
 
@@ -183,7 +199,6 @@ Game.prototype.checkWinner = function (indx, callback) {
 
 
 module.exports = {
-
-Game
-
+Game,
+newGame,
 };
