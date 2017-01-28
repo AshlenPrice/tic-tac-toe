@@ -41,6 +41,15 @@ const signOut = function () {
   });
 };
 
+
+
+/*
+TODO -
+update the game - PATCH
+Create a new game - POST
+Get games /come back to a game - PATCH
+Update game
+*/
 module.exports = {
   signUp,
   signIn,
