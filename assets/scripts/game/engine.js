@@ -1,6 +1,4 @@
 'use strict';
-// const newBoard = ['','','','','','','','',''];
-//create the gameboard as an array object
 
 // Create an array made of the html ids of each box on the grid.  I be used to determine the index of each move.
 // let gameSpaces = ["c0", "c1", "c2", "c3", "c42", "c5", "c6", "c7", "c8"];
@@ -16,7 +14,8 @@
 const Game = function () {
   this.board = ['','','','','','','','',''];
   this.currentPlayer = 'x';
-  // this.currentGameMoves = 0;
+  this.currentGameMoves = 0;
+  this.gameActive = true;
   this.wins = [
         [0,1,2],[3,4,5],[6,7,8], // Row
         [0,3,6],[1,4,7],[2,5,8], // col
@@ -32,14 +31,17 @@ const Game = function () {
   winner= X O
   gameTied
 */
-// create a gameState prototype
+// create a gameState prototype???
+
 
 //establishes who moves.
-Game.prototype.setMove = function (i){
+Game.prototype.setMove = function (i) {
 //is a condition that means is the game space is empty and it allows the rest of the funtion to run.
   if (this.board[i]){
     this.board[i] = this.currentPlayer; // this function should change the player after a move has been made by the opposite player
+}
 };
+
 
 Game.prototype.changePlayer = function (){
   if (this.currentPlayer === 'x'){
@@ -47,17 +49,17 @@ Game.prototype.changePlayer = function (){
   } else {
       this.currentPlayer = 'x';
   }
+  return this.currentPlayer
 };
 
 //set a check win function that
 
-//make a postiion store to push to a player
+//make a postiion store to push to a playe?r
 /* this function should: check for a winner if a player has 3 matching indexes in a row that
 match any of the wins array */
 
-Game.prototype.winner = function (){
-  let winner = true;
-  for (let i = 0; i>this.wins.length; i++){
+Game.prototype.winner = function (wins,){
+  for (let i = 0; this.wins.length; i++){
     for(let j = 0; this.wins[i].length; j++){
       if (this.wins[i][j]==='x'){
         console.log("winner:x");
@@ -67,6 +69,18 @@ Game.prototype.winner = function (){
     }
   }
 };
+
+// Winning function has to check if there is a winner before it switches turn in the input.js file
+Game.prototype.winningMove= function winner(wins,) {
+  if this.currentPlayer = this.board[];
+    for (let i = 0; i < winLines[lastMove].length; i++) {
+        let  = winLines[currentmove][i];
+        if(player === board[line[0]] && player === board[line[1]]) {
+            return true;
+        }
+    }
+    return false;
+}
 /*
   POSSIBLE WAYS TO MAKE THIS WORK
   - a loop of some sort (forEach,array method findIndex, or find.)
@@ -74,6 +88,17 @@ Game.prototype.winner = function (){
       then console.log(currentPlayer wins );
   let the winning array
 */
+
+
+// full board function
+// isFull;: function() {
+//   for(let i = 0; i < 9; i++) {
+//     if (this.board[i] === this.EMPTY) {
+//       return false;
+//     }
+//   }
+//   return true;
+// },
 
 //this resets the gameboard.
   //needs to be tested in node
@@ -121,37 +146,11 @@ Game.prototype.winner = function (){
 //
 
 
-//full board function
-// isFull;: function() {
-//   for(let i = 0; i < 9; i++) {
-//     if (this.board[i] === this.EMPTY) {
-//       return false;
-//     }
-//   }
-//   return true;
-// },
 
 
 // prototype the methods it will need
 // setup event listeners : what happens when i clicks in index.js
 // in the events.js setup game handles
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
