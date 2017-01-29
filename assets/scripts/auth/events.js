@@ -1,4 +1,5 @@
 'use strict';
+console.log('file running');
 
 const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');

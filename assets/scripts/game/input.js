@@ -1,5 +1,5 @@
 'use strict';
-
+console.log('file running');
 
 const engine = require('./engine');
 const api = require('../auth/api');
@@ -110,9 +110,9 @@ TODO
 // in the inputs.js setup game handles
 // setup event listeners : what happens when i clicks in index.js
 
-
-$('#previous-games').on('click', onShowGames);
-$('#play-again-button').on('click', onCreateGames);
+//
+// $('#previous-games').on('click', onShowGames);
+// $('#play-again-button').on('click', onCreateGames);
 
 
 module.exports = {

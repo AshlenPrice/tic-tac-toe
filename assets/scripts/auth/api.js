@@ -1,4 +1,6 @@
 'use strict';
+console.log('file running');
+
 const config = require('../config');
 const store = require('../store');
 

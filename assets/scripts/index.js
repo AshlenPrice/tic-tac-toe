@@ -1,18 +1,20 @@
 'use strict';
+console.log('file running');
 
 const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
-// const authEvents = require('./auth/events');
-// const gameEvents = require('./game/events');
+const engine = require('./game/engine');
+const ui = require('./game/game-ui');
+const input = require('./game/input');
 
-$(() => {
-  setAPIOrigin(location, config);
-  $('.auth-form').on('submit', authEvents.onFormSubmit);
-  $('#sign-out').on('click', authEvents.handleSignOut);
-  $('#get-games').on('click', gameEvents.getGames);
-  $('#new-game').on('click', gameEvents.newGame);
-  $('.gameboard').on('click', '.cell', gameEvents.makeMove);
-});
+// $(() => {
+//   setAPIOrigin(location, config);
+//   $('.auth-form').on('submit', authEvents.onFormSubmit);
+//   $('#sign-out').on('click', authEvents.handleSignOut);
+//   $('#get-games').on('click', gameEvents.getGames);
+//   $('#new-game').on('click', gameEvents.newGame);
+//   $('.gameboard').on('click', '.cell', gameEvents.makeMove);
+// });
 
 $(() => {
   setAPIOrigin(location, config);
