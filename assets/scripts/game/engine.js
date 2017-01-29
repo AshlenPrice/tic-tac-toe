@@ -8,22 +8,16 @@
 
 const Game = function () {
   this.board = ['','','','','','','','',''];
-  this.currentPlayer = 'x';
+  this.currentPlayer = 'X';
   this.currentGameMoves = 0;
-  this.gameActive = true;
+  this.gameOver = false;
   this.possibleWins = [
                 [0,1,2],[3,4,5],[6,7,8], // Row
                 [0,3,6],[1,4,7],[2,5,8], // col
                 [0,4,8],[2,4,6] // diag
               ];
 };
-
-
-// Game.prototype.newGame = function () {
-//   for (let i = 0; this.board.length; i++){
-//     this.board[i] = '';
-//   }
-// };
+//prototype the methods the of the game
 
 // Need to determine if the board is full.
 // full board function
@@ -35,30 +29,32 @@ Game.prototype.fullBoard = function() {
   }
   return true;
 };
-//establish a turn counter-- DO I EVEN NEED A TURN COUNTER?
-
-// create a gameState prototype???
-
 
 //establishes who moves.
 Game.prototype.setMove = function (i) {
 //is a condition that means is the game space is empty and it allows the rest of the funtion to run.
   if (this.board[i]===''){
     this.board[i] = this.currentPlayer;
-    this.winner();
+    this.winner() === this.currentPlayer;
     this.fullBoard();
     this.changePlayer();
   }
-};
 
+};
+// gameover should res
+Game.prototype.resetGameBoard = function () {
+  winner = this.currentPlayer;
+    this.gameOver = true;
+    break;)
+};
 
 // this function should change the player after a move has been made by the opposite player
 
 Game.prototype.changePlayer = function (){
-  if (this.currentPlayer === 'x'){
-      this.currentPlayer = 'o';
+  if (this.currentPlayer === 'X'){
+      this.currentPlayer = 'O';
   } else {
-      this.currentPlayer = 'x';
+      this.currentPlayer = 'X';
   }
   return this.currentPlayer;
 };
@@ -71,31 +67,21 @@ match any of the wins array */
 
 Game.prototype.winner = function () {
   if
-     ((this.board[0]=== 'x' && this.board[1] === 'x' && this.board[2]=== 'x') ||
-      (this.board[3]=== 'x' && this.board[4] === 'x' && this.board[5]=== 'x') ||
-      (this.board[6]=== 'x' && this.board[7] === 'x' && this.board[8]=== 'x') ||
-      (this.board[0]=== 'x' && this.board[3] === 'x' && this.board[6]=== 'x') ||
-      (this.board[1]=== 'x' && this.board[4] === 'x' && this.board[7]=== 'x') ||
-      (this.board[2]=== 'x' && this.board[5] === 'x' && this.board[8]=== 'x') ||
-      (this.board[0]=== 'x' && this.board[4] === 'x' && this.board[8]=== 'x') ||
-      (this.board[2]=== 'x' && this.board[4] === 'x' && this.board[6]=== 'x')){
-        console.log("X wins!");
-}  else if
-     ((this.board[0] === 'o' && this.board[1] === 'o' && this.board[2] === 'o') ||
-      (this.board[3] === 'o' && this.board[4] === 'o' && this.board[5] === 'o') ||
-      (this.board[6] === 'o' && this.board[7] === 'o' && this.board[8] === 'o') ||
-      (this.board[0] === 'o' && this.board[3] === 'o' && this.board[6] === 'o') ||
-      (this.board[1] === 'o' && this.board[4] === 'o' && this.board[7] === 'o') ||
-      (this.board[2] === 'o' && this.board[5] === 'o' && this.board[8] === 'o') ||
-      (this.board[0] === 'o' && this.board[4] === 'o' && this.board[8] === 'o') ||
-      (this.board[2] === 'o' && this.board[4] === 'o' && this.board[6] === 'o')){
-   console.log("O wins!");
- }
-
+     ((this.board[0]=== this.currentPlayer && this.board[1] === this.currentPlayer && this.board[2]=== this.currentPlayer) ||
+      (this.board[3]=== this.currentPlayer && this.board[4] === this.currentPlayer && this.board[5]=== this.currentPlayer) ||
+      (this.board[6]=== this.currentPlayer && this.board[7] === this.currentPlayer && this.board[8]=== this.currentPlayer) ||
+      (this.board[0]=== this.currentPlayer && this.board[3] === this.currentPlayer && this.board[6]=== this.currentPlayer) ||
+      (this.board[1]=== this.currentPlayer && this.board[4] === this.currentPlayer && this.board[7]=== this.currentPlayer) ||
+      (this.board[2]=== this.currentPlayer && this.board[5] === this.currentPlayer && this.board[8]=== this.currentPlayer) ||
+      (this.board[0]=== this.currentPlayer && this.board[4] === this.currentPlayer && this.board[8]=== this.currentPlayer) ||
+      (this.board[2]=== this.currentPlayer && this.board[4] === this.currentPlayer && this.board[6]=== this.currentPlayer)){
+        console.log(this.currentPlayer + ' is the WINNER!');
+        this.gameOver = true;
+        return this.currentPlayer + 'is the WINNER!';
+}
 };
 
 
-// Winning function has to check if there is a winner before it switches turn in the input.js file
 
 /*
   POSSIBLE WAYS TO MAKE THIS WORK
@@ -145,44 +131,23 @@ Game.prototype.winner = function () {
 
 //
 
-
-
-
 //clear the board
 //function that resets the board. Can this be turned into a method?
 
-//
-
-
-
-
-// prototype the methods it will need
-// setup event listeners : what happens when i clicks in index.js
-// in the events.js setup game handles
-
 
 // this creates the new game
+/*
+MAY NOT NEED THIS
 function newGame() {
 let newGame = new Game();
-return newGame;
+ return newGame;
 }
-
-
-/*
-TODO
-
-
-
-
-
 */
-
-
 
 
 
 
 module.exports = {
 Game,
-newGame,
+// newGame,
 };

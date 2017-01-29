@@ -15,7 +15,15 @@ const store = require('../store');
 /*
 TODO
 - create new game
--
-
-
 */
+// in the inputs.js setup game handles
+// setup event listeners : what happens when i clicks in index.js
+
+const game = new engine.Game();
+
+
+
+
+module.exports = {
+  newGame,
+};
