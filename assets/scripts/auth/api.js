@@ -1,8 +1,7 @@
 'use strict';
-
 const config = require('../config');
-
 const store = require('../store');
+
 
 const signUp = function (data) {
   return $.ajax({
@@ -41,6 +40,43 @@ const signOut = function () {
   });
 };
 
+const showGames = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'GET',
+    headers: {
+    Authorization: `Token token=${store.user.token}`
+  },
+  });
+};
+const createGames = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'POST',
+    headers: {
+    Authorization: `Token token=${store.user.token}`
+  },
+  data
+  });
+};
+const updateGame = function(index, currentPlayer, status) {
+  return $.ajax({
+    url: config.apiOrigin + '/games' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    data: {
+      game: {
+        cell: {
+          index: index,
+          value: currentPlayer,
+        },
+        over: status,
+      }
+    },
+  });
+};
 
 
 /*
@@ -55,4 +91,7 @@ module.exports = {
   signIn,
   changePassword,
   signOut,
+  showGames,
+  createGames,
+  updateGame,
 };

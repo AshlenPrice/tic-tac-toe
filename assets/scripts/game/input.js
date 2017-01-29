@@ -6,6 +6,7 @@ const api = require('../auth/api');
 const ui = require('./game-ui');
 const store = require('../store');
 
+const game = new engine.Game();
 
 //when clicking new game, this runs resetGameBoard function
 //   newGame.on('click', function(){
@@ -109,9 +110,9 @@ TODO
 // in the inputs.js setup game handles
 // setup event listeners : what happens when i clicks in index.js
 
-const game = new engine.Game();
 
-
+$('#previous-games').on('click', onShowGames);
+$('#play-again-button').on('click', onCreateGames);
 
 
 module.exports = {

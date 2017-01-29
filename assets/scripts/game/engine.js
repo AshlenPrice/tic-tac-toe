@@ -22,16 +22,29 @@ const Game = function () {
 
 // Need to determine if the board is full.
 // full board function
+
+//
+// Game.prototype.fullBoard = function() {
+//   for(let i = 0; i < 9; i++) {
+//     if (this.board[i] === '') {
+//       return false;
+//   } this.gameOver = true;
+//   console.log('The game is a draw');// need to change something here. Printing the game is a draw after every change turn
+//   return true;
+// }
+// };
 Game.prototype.fullBoard = function() {
-  for(let i = 0; i < 9; i++) {
+  for (let i = 0; i < 9; i++) {
     if (this.board[i] === '') {
+      console.log(false);
       return false;
+    } else if ((this.board[i] !== '') && (this.winner === false)) {
+      this.gameOver = true;
+      console.log('The game is a draw');
+    }
   }
-  this.gameOver = true;
-  console.log('The game is a draw');// need to change something here. Printing the game is a draw after every change turn
-  return true;
-}
 };
+
 
 //establishes who moves.
 Game.prototype.setMove = function (i) {
