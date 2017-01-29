@@ -11,7 +11,7 @@ const Game = function () {
   this.currentPlayer = 'x';
   this.currentGameMoves = 0;
   this.gameActive = true;
-  this.wins = [
+  this.possibleWins = [
                 [0,1,2],[3,4,5],[6,7,8], // Row
                 [0,3,6],[1,4,7],[2,5,8], // col
                 [0,4,8],[2,4,6] // diag
@@ -21,11 +21,11 @@ const Game = function () {
 
 
 
-Game.prototype.newGame = function () {
-  for (let i = 0; this.board.length; i++){
-    this.board[i] = '';
-  }
-};
+// Game.prototype.newGame = function () {
+//   for (let i = 0; this.board.length; i++){
+//     this.board[i] = '';
+//   }
+// };
 
 
 // Need to determine if the board is full.
@@ -47,9 +47,14 @@ Game.prototype.fullBoard = function() {
 Game.prototype.setMove = function (i) {
 //is a condition that means is the game space is empty and it allows the rest of the funtion to run.
   if (this.board[i]===''){
-    this.board[i] = this.currentPlayer; // this function should change the player after a move has been made by the opposite player
-}
+    this.board[i] = this.currentPlayer;
+
+ }
+
 };
+
+
+// this function should change the player after a move has been made by the opposite player
 
 Game.prototype.changePlayer = function (){
   if (this.currentPlayer === 'x'){
@@ -66,28 +71,45 @@ Game.prototype.changePlayer = function (){
 /* this function should: check for a winner if a player has 3 matching indexes in a row that
 match any of the wins array */
 
-// Game.prototype.winner = function (this.wins){
-//   for (let i = 0; i > this.wins.length; i++){
-//       if (this.wins[i][j]==='x'){
-//         console.log("winner:x");
-//       } else if (this.wins[i][j]==='o'){
-//         console.log("winner:o");
-//       }
-//     }
-//   }
-// };
+Game.prototype.winner = function () {
+  console.log(this.possibleWins);
+  for (let winIndex= 0; winIndex < this.possibleWins.length; winIndex++){
+  console.log(this.possibleWins[winIndex]);
+      // if (this.board[winIndex]==='x'){
+      //   console.log("winner:x");
+      // } else if (this.wins[winIndex][j]==='o'){
+      //   console.log("winner:o");
+      // }
+    }
+};
+  if ((board[0]=== 'x' && board[1] === 'x' && board[2]=== 'x') ||
+      (board[3]=== 'x' && board[4] === 'x' && board[5]=== 'x') ||
+      (board[6]=== 'x' && board[7] === 'x' && board[8]=== 'x') ||
+      (board[0]=== 'x' && board[3] === 'x' && board[6]=== 'x') ||
+      (board[1]=== 'x' && board[4] === 'x' && board[7]=== 'x') ||
+      (board[2]=== 'x' && board[5] === 'x' && board[8]=== 'x') ||
+      (board[0]=== 'x' && board[4] === 'x' && board[8]=== 'x') ||
+      (board[2]=== 'x' && board[4] === 'x' && board[6]=== 'x')){
+        alert("X wins!");
+}  else if
+    ((board[0] === 'o' && board[1] === 'o' && board[2] === 'o') ||
+      (board[3] === 'o' && board[4] === 'o' && board[5] === 'o') ||
+      (board[6] === 'o' && board[7] === 'o' && board[8] === 'o') ||
+      (board[0] === 'o' && board[3] === 'o' && board[6] === 'o') ||
+      (board[1] === 'o' && board[4] === 'o' && board[7] === 'o') ||
+      (board[2] === 'o' && board[5] === 'o' && board[8] === 'o') ||
+      (board[0] === 'o' && board[4] === 'o' && board[8] === 'o') ||
+      (board[2] === 'o' && board[4] === 'o' && board[6] === 'o')) {
+   alert("O wins!");
+ }
+
+  }
+};
+};
+
 
 // Winning function has to check if there is a winner before it switches turn in the input.js file
-// Game.prototype.winningMove= function winner(wins,) {
-//   if this.currentPlayer = this.board[];
-//     for (let i = 0; i < winLines[lastMove].length; i++) {
-//         let  = winLines[currentmove][i];
-//         if(player === board[line[0]] && player === board[line[1]]) {
-//             return true;
-//         }
-//     }
-//     return false;
-// }
+
 /*
   POSSIBLE WAYS TO MAKE THIS WORK
   - a loop of some sort (forEach,array method findIndex, or find.)
@@ -109,58 +131,32 @@ Game.prototype.getIndexes = function () {
 };
 
 
-Game.prototype.checkWinner = function (indx, callback) {
-  const indexes = this.getIndexes();
-  let winner = null;
-
-  if (this.boardFull()) {
-    winner = 'tie';
-  }
-
-  for (let i = 0; i < this.winningStates.length; i++) {
-    const isWinner = this.compareArrays(indexes, this.winningStates[i]);
-
-    if (isWinner) {
-      winner = this.currentPlayer;
-      this.gameOver = true;
-      break;
-    }
-  }
-
-  callback(winner, indx);
-};
+// Game.prototype.winning = function (indx, callback) {
+//   const indexes = this.getIndexes();
+//   let winner = null;
+//
+//   if (this.boardFull()) {
+//     winner = 'tie';
+//   }
+//
+//   for (let i = 0; i < this.winningStates.length; i++) {
+//     const isWinner = this.compareArrays(indexes, this.winningStates[i]);
+//
+//     if (isWinner) {
+//       winner = this.currentPlayer;
+//       this.gameOver = true;
+//       break;
+//     }
+//   }
+//
+//   callback(winner, indx);
+// };
 
 //this resets the gameboard.
   //needs to be tested in node
 
 
-// }
-// once this works consider adding conditional statement that will check if the board is full return a draw,
-
-// function isMatch(cards) {
-//   // alert winning message
-//   if (cards[0] === cards[1]) {
-//     alert("You found a match!");
-//   } else {
-//     alert("Sorry, try again.");
 //
-//   }
-// }
-
-// alternate changePlayer function
-// currentPlayer, place X on board. If there is X on board then player2 turn and place O on board
-// let switchTurn = function (index) {
-//   if (board[index]===''){
-//     board[index] = currentPlayer;
-//     wins();
-//     if(currentPlayer === "x"){
-//       currentPlayer = "o"
-//   }else{
-//     currentPlayer = "x"
-//     }
-//   }
-// };
-
 
 
 
@@ -177,6 +173,8 @@ Game.prototype.checkWinner = function (indx, callback) {
 // setup event listeners : what happens when i clicks in index.js
 // in the events.js setup game handles
 
+
+// this creates the new game
 function newGame() {
 let newGame = new Game();
 console.log(newGame);
