@@ -19,20 +19,17 @@ const Game = function () {
 };
 
 
-
-
 // Game.prototype.newGame = function () {
 //   for (let i = 0; this.board.length; i++){
 //     this.board[i] = '';
 //   }
 // };
 
-
 // Need to determine if the board is full.
 // full board function
 Game.prototype.fullBoard = function() {
   for(let i = 0; i < 9; i++) {
-    if (this.board[i] === this.EMPTY) {
+    if (this.board[i] === '') {
       return false;
     }
   }
@@ -48,9 +45,10 @@ Game.prototype.setMove = function (i) {
 //is a condition that means is the game space is empty and it allows the rest of the funtion to run.
   if (this.board[i]===''){
     this.board[i] = this.currentPlayer;
-
- }
-
+    this.winner();
+    this.fullBoard();
+    this.changePlayer();
+  }
 };
 
 
@@ -72,39 +70,28 @@ Game.prototype.changePlayer = function (){
 match any of the wins array */
 
 Game.prototype.winner = function () {
-  console.log(this.possibleWins);
-  for (let winIndex= 0; winIndex < this.possibleWins.length; winIndex++){
-  console.log(this.possibleWins[winIndex]);
-      // if (this.board[winIndex]==='x'){
-      //   console.log("winner:x");
-      // } else if (this.wins[winIndex][j]==='o'){
-      //   console.log("winner:o");
-      // }
-    }
-};
-  if ((board[0]=== 'x' && board[1] === 'x' && board[2]=== 'x') ||
-      (board[3]=== 'x' && board[4] === 'x' && board[5]=== 'x') ||
-      (board[6]=== 'x' && board[7] === 'x' && board[8]=== 'x') ||
-      (board[0]=== 'x' && board[3] === 'x' && board[6]=== 'x') ||
-      (board[1]=== 'x' && board[4] === 'x' && board[7]=== 'x') ||
-      (board[2]=== 'x' && board[5] === 'x' && board[8]=== 'x') ||
-      (board[0]=== 'x' && board[4] === 'x' && board[8]=== 'x') ||
-      (board[2]=== 'x' && board[4] === 'x' && board[6]=== 'x')){
-        alert("X wins!");
+  if
+     ((this.board[0]=== 'x' && this.board[1] === 'x' && this.board[2]=== 'x') ||
+      (this.board[3]=== 'x' && this.board[4] === 'x' && this.board[5]=== 'x') ||
+      (this.board[6]=== 'x' && this.board[7] === 'x' && this.board[8]=== 'x') ||
+      (this.board[0]=== 'x' && this.board[3] === 'x' && this.board[6]=== 'x') ||
+      (this.board[1]=== 'x' && this.board[4] === 'x' && this.board[7]=== 'x') ||
+      (this.board[2]=== 'x' && this.board[5] === 'x' && this.board[8]=== 'x') ||
+      (this.board[0]=== 'x' && this.board[4] === 'x' && this.board[8]=== 'x') ||
+      (this.board[2]=== 'x' && this.board[4] === 'x' && this.board[6]=== 'x')){
+        console.log("X wins!");
 }  else if
-    ((board[0] === 'o' && board[1] === 'o' && board[2] === 'o') ||
-      (board[3] === 'o' && board[4] === 'o' && board[5] === 'o') ||
-      (board[6] === 'o' && board[7] === 'o' && board[8] === 'o') ||
-      (board[0] === 'o' && board[3] === 'o' && board[6] === 'o') ||
-      (board[1] === 'o' && board[4] === 'o' && board[7] === 'o') ||
-      (board[2] === 'o' && board[5] === 'o' && board[8] === 'o') ||
-      (board[0] === 'o' && board[4] === 'o' && board[8] === 'o') ||
-      (board[2] === 'o' && board[4] === 'o' && board[6] === 'o')) {
-   alert("O wins!");
+     ((this.board[0] === 'o' && this.board[1] === 'o' && this.board[2] === 'o') ||
+      (this.board[3] === 'o' && this.board[4] === 'o' && this.board[5] === 'o') ||
+      (this.board[6] === 'o' && this.board[7] === 'o' && this.board[8] === 'o') ||
+      (this.board[0] === 'o' && this.board[3] === 'o' && this.board[6] === 'o') ||
+      (this.board[1] === 'o' && this.board[4] === 'o' && this.board[7] === 'o') ||
+      (this.board[2] === 'o' && this.board[5] === 'o' && this.board[8] === 'o') ||
+      (this.board[0] === 'o' && this.board[4] === 'o' && this.board[8] === 'o') ||
+      (this.board[2] === 'o' && this.board[4] === 'o' && this.board[6] === 'o')){
+   console.log("O wins!");
  }
 
-  }
-};
 };
 
 
@@ -118,17 +105,17 @@ Game.prototype.winner = function () {
   let the winning array
 */
 
-Game.prototype.getIndexes = function () {
-  console.log(this.wins);
-  let indexes = [];
-  for (let i = 0; i < this.board.length; i++) {
-    if (this.board[i] === this.currentPlayer) {
-      indexes.push(i);
-    }
-  }
-// this should push to the array .
-  return indexes;
-};
+// Game.prototype.getIndexes = function () {
+//   console.log(this.wins);
+//   let indexes = [];
+//   for (let i = 0; i < this.board.length; i++) {
+//     if (this.board[i] === this.currentPlayer) {
+//       indexes.push(i);
+//     }
+//   }
+// // this should push to the array .
+//   return indexes;
+// };
 
 
 // Game.prototype.winning = function (indx, callback) {
@@ -177,9 +164,8 @@ Game.prototype.getIndexes = function () {
 // this creates the new game
 function newGame() {
 let newGame = new Game();
-console.log(newGame);
+return newGame;
 }
-
 
 
 /*
