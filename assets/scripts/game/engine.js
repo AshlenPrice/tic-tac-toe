@@ -10,6 +10,7 @@ const Game = function () {
   this.board = ['','','','','','','','',''];
   this.currentPlayer = 'X';
   this.currentGameMoves = 0;
+  this.activeGame = true;
   this.gameOver = false;
   this.possibleWins = [
                 [0,1,2],[3,4,5],[6,7,8], // Row
@@ -25,9 +26,11 @@ Game.prototype.fullBoard = function() {
   for(let i = 0; i < 9; i++) {
     if (this.board[i] === '') {
       return false;
-    }
   }
+  this.gameOver = true;
+  console.log('The game is a draw');// need to change something here. Printing the game is a draw after every change turn
   return true;
+}
 };
 
 //establishes who moves.
@@ -35,17 +38,14 @@ Game.prototype.setMove = function (i) {
 //is a condition that means is the game space is empty and it allows the rest of the funtion to run.
   if (this.board[i]===''){
     this.board[i] = this.currentPlayer;
-    this.winner() === this.currentPlayer;
+    this.winner();
     this.fullBoard();
     this.changePlayer();
   }
-
 };
 // gameover should res
 Game.prototype.resetGameBoard = function () {
-  winner = this.currentPlayer;
-    this.gameOver = true;
-    break;)
+
 };
 
 // this function should change the player after a move has been made by the opposite player
@@ -91,17 +91,17 @@ Game.prototype.winner = function () {
   let the winning array
 */
 
-// Game.prototype.getIndexes = function () {
-//   console.log(this.wins);
-//   let indexes = [];
-//   for (let i = 0; i < this.board.length; i++) {
-//     if (this.board[i] === this.currentPlayer) {
-//       indexes.push(i);
-//     }
-//   }
-// // this should push to the array .
-//   return indexes;
-// };
+Game.prototype.getIndexes = function () {
+  console.log(this.wins);
+  let indexes = [];
+  for (let i = 0; i < this.board.length; i++) {
+    if (this.board[i] === this.currentPlayer) {
+      indexes.push(i);
+    }
+  }
+// this should push to the array .
+  return indexes;
+};
 
 
 // Game.prototype.winning = function (indx, callback) {
@@ -144,10 +144,13 @@ let newGame = new Game();
 }
 */
 
-
+function newGame() {
+let newGame = new Game();
+ return newGame;
+}
 
 
 module.exports = {
 Game,
-// newGame,
+newGame,
 };
