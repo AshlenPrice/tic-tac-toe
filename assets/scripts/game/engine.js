@@ -1,13 +1,11 @@
 'use strict';
 
 // Create an array made of the html ids of each box on the grid.  I be used to determine the index of each move.
-// let gameSpaces = ["c0", "c1", "c2", "c3", "c42", "c5", "c6", "c7", "c8"];
 
 // let newGame = ('#reset');
-
-
 const Game = function() {
   this.board = ['', '', '', '', '', '', '', '', ''];
+  this.gameSpaces = ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8"];
   this.currentPlayer = 'X';
   this.currentGameMoves = 0;
   this.activeGame = true;
@@ -37,6 +35,7 @@ Game.prototype.fullBoard = function() {
     }
     this.gameOver = true;
     console.log('The game is a draw'); // need to change something here. Printing the game is a draw after every change turn
+    this.resetGameBoard();
     return true;
   }
 };
@@ -56,10 +55,15 @@ Game.prototype.setMove = function(i) {
     this.changePlayer();
   }
 };
-// gameover should res
-Game.prototype.resetGameBoard = function() {
 
-};
+$('.box').on('click', function(){
+    $(this.id).text("o");
+  console.log(this.id);
+});
+//
+// $(document).on('click', 'span', function () {
+//     alert(this.id);
+// });
 
 // this function should change the player after a move has been made by the opposite player
 
@@ -72,9 +76,6 @@ Game.prototype.changePlayer = function() {
   return this.currentPlayer;
 };
 
-//set a check win function that
-
-//make a postiion store to push to a playe?r
 /* this function should: check for a winner if a player has 3 matching indexes in a row that
 match any of the wins array */
 
@@ -89,11 +90,10 @@ Game.prototype.winner = function() {
     (this.board[2] === this.currentPlayer && this.board[4] === this.currentPlayer && this.board[6] === this.currentPlayer)) {
     console.log(this.currentPlayer + ' is the WINNER!');
     this.gameOver = true;
+    this.resetGameBoard();
     return this.currentPlayer + 'is the WINNER!';
   }
 };
-
-
 
 /*
   POSSIBLE WAYS TO MAKE THIS WORK
@@ -102,7 +102,18 @@ Game.prototype.winner = function() {
       then console.log(currentPlayer wins );
   let the winning array
 */
+Game.prototype.resetGameBoard = function() {
+  this.board = ['', '', '', '', '', '', '', '', ''];
 
+};
+
+
+// Game.prototype.reset = function () {
+//   this.currentPlayer = 'x';
+//   this.gameOver = false;
+//   this.board = this.newBoard.slice();
+//   return this.board;
+// };
 
 // this creates the new game
 /*

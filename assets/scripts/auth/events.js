@@ -5,6 +5,7 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 const store = require('../store');
+const engine = require('./engine');
 // const engine = require('./engine');
 
 
@@ -78,12 +79,20 @@ const onShowGames = function (event) {
 // .fail(ui.fail);
 // };
 
-$('col-xs-4 box').on('click', (event) => {
+$('.box').on('click', (event) => {
  let currentCell = event.currentTarget.id;
- let moveSuccess = engine.changePlayer(currentCell);
+ let engine.setMove = engine.changePlayer(currentCell);
   $(event.currentTarget).text(moveSuccess);
 });
 
+$('.box').on('click', function(){
+  //  $(this.id);
+  console.log(this.id);
+});
+// //
+// $(document).on('click', 'span', function () {
+//     alert(this.id);
+// });
 $('#play-again-button').on('click', () => {
  engine.resetGameBoard();
 });

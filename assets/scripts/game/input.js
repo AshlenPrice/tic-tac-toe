@@ -8,6 +8,7 @@ const store = require('../store');
 
 const game = new engine.Game();
 
+
 //when clicking new game, this runs resetGameBoard function
 //   newGame.on('click', function(){
 //     resetGameBoard();
