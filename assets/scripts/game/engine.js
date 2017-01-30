@@ -93,6 +93,7 @@ Game.prototype.winner = function() {
       then console.log(currentPlayer wins );
   let the winning array
 */
+// reset the game
 Game.prototype.resetGameBoard = function() {
   this.board = ['', '', '', '', '', '', '', '', ''];
 $ (".box").empty();
@@ -100,21 +101,8 @@ this.gameOver = false;
 };
 
 
-// Game.prototype.reset = function () {
-//   this.currentPlayer = 'x';
-//   this.gameOver = false;
-//   this.board = this.newBoard.slice();
-//   return this.board;
-// };
 
 // this creates the new game
-/*
-MAY NOT NEED THIS
-function newGame() {
-let newGame = new Game();
- return newGame;
-}
-*/
 
 function newGame() {
   let newGame = new Game();

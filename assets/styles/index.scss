@@ -20,7 +20,6 @@ body {
 
 
 }
-
 // .col-xs-4 {
 //   border: 1px solid $white;
 //   height: 30%;
@@ -32,36 +31,36 @@ body {
   display: inline-block;
 }
 
-#scoreboard {
-  background-color: $poke-citron;
-  border-radius: 8px;
-  box-shadow: 5px 5px 5px $poke-yellow;
-  clear: left;
-  height: 210px;
-  line-height: 200px;
-  margin: 5px 0 0 20px;
-  padding: 5px;
-  position: relative;
-  text-align: center;
-  width: 310px;
-}
-
-#lillipup-win {
-  left: 0;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
-
-#Mawile-win {
-  left: 0;
-  position: absolute;
-  top: 0;
-  z-index: 1; }
-
-#Pokemon-draw {
-  left: 0;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
+// #scoreboard {
+//   background-color: $poke-citron;
+//   border-radius: 8px;
+//   box-shadow: 5px 5px 5px $poke-yellow;
+//   clear: left;
+//   height: 210px;
+//   line-height: 200px;
+//   margin: 5px 0 0 20px;
+//   padding: 5px;
+//   position: relative;
+//   text-align: center;
+//   width: 310px;
+// }
+//
+// #lillipup-win {
+//   left: 0;
+//   position: absolute;
+//   top: 0;
+//   z-index: 1;
+// }
+//
+// #Mawile-win {
+//   left: 0;
+//   position: absolute;
+//   top: 0;
+//   z-index: 1; }
+//
+// #Pokemon-draw {
+//   left: 0;
+//   position: absolute;
+//   top: 0;
+//   z-index: 1;
+// }
