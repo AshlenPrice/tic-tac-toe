@@ -53,17 +53,10 @@ Game.prototype.setMove = function(i) {
     this.winner();
     this.fullBoard();
     this.changePlayer();
+    return true;
   }
+return false;
 };
-
-$('.box').on('click', function(){
-    $(this.id).text("o");
-  console.log(this.id);
-});
-//
-// $(document).on('click', 'span', function () {
-//     alert(this.id);
-// });
 
 // this function should change the player after a move has been made by the opposite player
 
@@ -104,7 +97,8 @@ Game.prototype.winner = function() {
 */
 Game.prototype.resetGameBoard = function() {
   this.board = ['', '', '', '', '', '', '', '', ''];
-
+$ (".box").empty();
+this.gameOver = false;
 };
 
 

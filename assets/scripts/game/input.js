@@ -13,6 +13,19 @@ const game = new engine.Game();
 //   newGame.on('click', function(){
 //     resetGameBoard();
 //   });
+
+
+$('.box').on('click', function(){
+  let move = $(this).attr('id'); // c3
+  let boardIndex = game.gameSpaces.indexOf(move); //3
+  let currentMove = game.currentPlayer;
+  let isValid = game.setMove(boardIndex);
+  if (isValid === true && !game.gameOver) {
+    $(this).text(currentMove);
+  }
+
+});
+
 const validMove = function (cell) {
   if (cell.html() === '') {
     return true;
