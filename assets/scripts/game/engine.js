@@ -35,7 +35,6 @@ Game.prototype.fullBoard = function() {
     }
     this.gameOver = true;
     console.log('The game is a draw'); // need to change something here. Printing the game is a draw after every change turn
-    this.resetGameBoard();
     return true;
   }
 };
@@ -83,7 +82,6 @@ Game.prototype.winner = function() {
     (this.board[2] === this.currentPlayer && this.board[4] === this.currentPlayer && this.board[6] === this.currentPlayer)) {
     console.log(this.currentPlayer + ' is the WINNER!');
     this.gameOver = true;
-    this.resetGameBoard();
     return this.currentPlayer + 'is the WINNER!';
   }
 };
