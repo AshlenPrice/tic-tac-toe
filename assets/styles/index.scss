@@ -2,9 +2,6 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'colors';
 
-
-
-
 header {
   text-align: center;
 }
@@ -14,36 +11,43 @@ body {
   color: $poke-yellow;
 }
 
+.gameboard {
+  margin: auto;
+  width: 50%;
+}
+
+
 .box {
-  border: 4px solid $poke-yellow;
-  height: 60px;
-
-
+  border: 8px solid $poke-yellow;
+  height: 140px;
+  padding: 40px;
+  margin: 5px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px $white;
+  text-align: center;
 }
 // .col-xs-4 {
 //   border: 1px solid $white;
 //   height: 30%;
 //   min-height: 30%;
-
 // }
-
 .right-column {
   display: inline-block;
 }
 
-// #scoreboard {
-//   background-color: $poke-citron;
-//   border-radius: 8px;
-//   box-shadow: 5px 5px 5px $poke-yellow;
-//   clear: left;
-//   height: 210px;
-//   line-height: 200px;
-//   margin: 5px 0 0 20px;
-//   padding: 5px;
-//   position: relative;
-//   text-align: center;
-//   width: 310px;
-// }
+.scoreboard {
+  background-color: $poke-citron;
+  border-radius: 8px;
+  box-shadow: 5px 5px 5px $poke-yellow;
+  clear: left;
+  height: 210px;
+  line-height: 200px;
+  margin: 5px 0 0 20px;
+  padding: 5px;
+  position: relative;
+  text-align: center;
+  width: 310px;
+}
 //
 // #lillipup-win {
 //   left: 0;

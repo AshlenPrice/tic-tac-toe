@@ -1,164 +1,156 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Pik-Pak-Pokémon</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Do not add `link` tags unless you know what you are doing -->
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <!-- Do not add `script` tags unless you know what you are doing -->
-  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-  <link href="https://fonts.googleapis.com/css?family=Nova+Mono" rel="stylesheet">
-</head>
+    <head>
+      <title>Pik-Pak-Pokémon</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+<link href="https://fonts.googleapis.com/css?family=Nova+Mono" rel="stylesheet">
+    </head>
 <header>
   <a href="http://fontmeme.com/pokemon-font/">
     <img src="http://fontmeme.com/permalink/170129/b3d41c6e772d39fbbb66c163ece2b307.png" alt="pokemon-font" border="0">
   </a>
-  <!-- <h1>Pik-Pak-Pokémon</h1> -->
-  <!-- <nav class="navbar navbar-default"> -->
-    <!-- <div class="container-fluid">
-      <!- Brand and toggle get grouped for better mobile display -->
-      <!-- <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+  <h1>Pik-Pak-Pokémon</h1>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-      </button> -->
-        <!-- <a class="navbar-brand" href="#">Brand</a>
-      </div> -->
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Link</a></li>
-        </ul> -->
-        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register/Sign In</button>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Link</a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div> -->
-      <!-- /.navbar-collapse -->
-    <!-- </div> -->
-    <!-- /.container-fluid -->
-  <!-- </nav> -->
-  <form id="sign-up">
-    <fieldset>
-      <legend>Sign up!</legend>
-      <label>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+      </ul>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register/Sign In</button>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<form id="sign-up">
+  <fieldset>
+    <legend>Sign up!</legend>
+    <label>
       Email
       <input type="text" name="credentials[email]">
     </label>
-      <label>
+    <label>
       Password
       <input type="password" name="credentials[password]">
     </label>
-      <label>
+    <label>
       Password Confirmation
       <input type="password" name="credentials[password_confirmation]">
     </label>
-      <input type="submit" name="submit" value="Sign up!">
-    </fieldset>
-  </form>
+    <input type="submit" name="submit" value="Sign up!">
+  </fieldset>
+</form>
 
-  <form id="sign-in">
-    <fieldset>
-      <legend>Sign In!</legend>
-      <label>
+<form id="sign-in">
+  <fieldset>
+    <legend>Sign In!</legend>
+    <label>
       Email
       <input type="text" name="credentials[email]">
     </label>
-      <label>
+    <label>
       Password
       <input type="password" name="credentials[password]">
     </label>
-      <input type="submit" name="submit" value="Sign In!">
-    </fieldset>
-  </form>
+    <input type="submit" name="submit" value="Sign In!">
+  </fieldset>
+</form>
 
-  <form id="change-password">
-    <fieldset>
-      <legend>Change Password!</legend>
-      <label>
+<form id="change-password">
+  <fieldset>
+    <legend>Change Password!</legend>
+    <label>
       Current Password
       <input type="password" type="current password" name="credentials[old]">
     </label>
-      <label>
+    <label>
       New Password
       <input type="password" type="new password" name="credentials[new]">
     </label>
-      <input type="submit" name="submit" value="Change Password!">
-    </fieldset>
-  </form>
+    <input  type="submit" name="submit" value="Change Password!">
+  </fieldset>
+</form>
 
-  <form id="sign-out">
-    <fieldset>
-      <legend>Sign Out!</legend>
-      <input type="submit" name="submit" value="Sign Out!">
-    </fieldset>
-  </form>
+<form id="sign-out">
+  <fieldset>
+  <legend>Sign Out!</legend>
+  <input type="submit" name="submit" value="Sign Out!">
+  </fieldset>
+</form>
 </header>
-
 <body>
 
   <!-- These are the containers for the gameboard.  -->
-  <div class="gameboard">
-    <!-- Try making an evenly spaced 3x3 grid. -->
-    <div class="row">
-      <div class="col-xs-3 box" id="c0"></div>
-      <div class="col-xs-3 box" id="c1"></div>
-      <div class="col-xs-3 box" id="c2"></div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3 box" id="c3"></div>
-      <div class="col-xs-3 box" id="c4"></div>
-      <div class="col-xs-3 box" id="c5"></div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3 box" id="c6"></div>
-      <div class="col-xs-3 box" id="c7"></div>
-      <div class="col-xs-3 box" id="c8"></div>
-    </div>
-  </div>
-  <!-- Indicates a successful or positive action -->
-  <button type="button" class="btn btn-success" id="new-battle">New Battle</button>
+    <div class="gameboard">
+              <!-- Try making an evenly spaced 3x3 grid. -->
+              <div class="row">
+                <div class="col-xs-3 box" id="c0"></div>
+                <div class="col-xs-3 box" id="c1"></div>
+                <div class="col-xs-3 box" id="c2"></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3 box" id="c3"></div>
+                <div class="col-xs-3 box" id="c4"></div>
+                <div class="col-xs-3 box" id="c5"></div>
+              </div>
+              <div class="row">
+                <div class="col-xs-3 box" id="c6"></div>
+                <div class="col-xs-3 box" id="c7"></div>
+                <div class="col-xs-3 box" id="c8"></div>
+              </div>
+            </div>
+            <!-- Indicates a successful or positive action -->
+            <button type="button" class="btn btn-success" id="new-battle">New Battle</button>
 
-  <!-- <div class="right-column">
-    <div id="scoreboard">
-      <img id="lillipup-win" src="assets/images/lilipup.png" alt="Lillipup" height="140" width="200">
-      <img id="Mawile-win" src="assets/images/Mawile.png" alt="Mawile" height="140" width="210">
-      <img id="Pokemon-draw" src="assets/images/Pokemon-PNG-Pic.png" alt="Pokemon" height="210" width="412">
-      <div class="Pokemon">
-        <div class="Lillipup">
-          <img id="Pup-profile" src="assets/images/lilipup.png" alt="Lillipup" height="110" width="110">
-        </div>
-        <div class="player-x-score wins">0</div>
-      </div>
-      <div class="Pokemon">
-        <div class="Mawile">
-          <img id="Maw-profile" src="assets/images/Mawile.png" alt="Mawile" height="110" width="110">
-        </div>
-        <div class="player-o-score wins">0</div>
-      </div>
-    </div> -->
+            <div class="right-column">
+                      <div class= "scoreboard"  id="score">
+                        <img id="lillipup-win" src="assets/images/lilipup.png" alt="Lillipup" height="140" width="200">
+                        <img id="Mawile-win" src="assets/images/Mawile.png" alt="Mawile" height="140" width="210">
+                        <img id="Pokemon-draw" src="assets/images/Pokemon-PNG-Pic.png" alt="Pokemon" height="210" width="412">
+                        <div class="Pokemon">
+                          <div class="Lillipup">
+                            <img id="Pup-profile" src="assets/images/lilipup.png" alt="Lillipup" height="110" width="110">
+                          </div>
+                          <div class="player-x-score wins">0</div>
+                        </div>
+                        <div class="Pokemon">
+                          <div class="Mawile">
+                            <img id="Maw-profile" src="assets/images/Mawile.png" alt="Mawile" height="110" width="110">
+                          </div>
+                          <div class="player-o-score wins">0</div>
+                        </div>
+                      </div>
 
-
-
-  </div>
-  </div>
-  </div>
+                    </div>
+                  </div>
+                </div>
 </body>
-
 </html>
