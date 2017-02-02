@@ -13,9 +13,11 @@ body {
 }
 
 .gameboard {
-  margin: auto;
+  margin: 40px;
   width: 50%;
   height: 50%;
+  float: left;
+
 }
 
 
@@ -50,6 +52,7 @@ body {
   position: relative;
   text-align: center;
   width: 310px;
+  float: right;
 }
 //
 // #lillipup-win {
@@ -65,9 +68,9 @@ body {
 //   top: 0;
 //   z-index: 1; }
 //
-// #Pokemon-draw {
-//   left: 0;
-//   position: absolute;
-//   top: 0;
-//   z-index: 1;
-// }
+#Pokemon-draw {
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}

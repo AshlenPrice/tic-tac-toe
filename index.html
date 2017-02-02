@@ -7,67 +7,108 @@
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
       <!-- Do not add `script` tags unless you know what you are doing -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-<link href="https://fonts.googleapis.com/css?family=Nova+Mono" rel="stylesheet">
+
+      <link href="https://fonts.googleapis.com/css?family=Nova+Mono" rel="stylesheet">
     </head>
 <header>
   <a href="http://fontmeme.com/pokemon-font/">
     <img src="http://fontmeme.com/permalink/170129/b3d41c6e772d39fbbb66c163ece2b307.png" alt="pokemon-font" border="0">
   </a>
-  <h1>Pik-Pak-Pokémon</h1>
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
+  <!-- <h1>Pik-Pak-Pokémon</h1> -->
+<!-- Buttons for user account informantion, they have corresponding modals -->
+<div class="User Account">
+  <button type="button" class="btn btn-primary" id="SignUpButton" data-toggle="modal" data-target="#signUpModal">
+    Register for Battle!
+    </button>
+  <button type="button" class="btn btn-primary" id="SignInButton" data-toggle="modal" data-target="#exampleModal">
+    Sign In to Battle!
+    </button>
+  <button type="button" class="btn btn-primary" id="ChangePwButton" data-toggle="modal" data-target="#exampleModal">
+    Change Password!
+    </button>
+  <button type="button" class="btn btn-primary hidden" id="SignOutButton">
+    Sign Out!
+    </button>
+</div>
+
+<!-- User account Modals -->
+<!-- Sign-Up -->
+<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="SignUpModalLabel">Register for Battle!</h4>
+      </div>
+      <div class="modal-body">
+        <form id="sign-up">
+          <fieldset>
+            <legend>Sign up!</legend>
+            <label>
+              Email
+              <input type="text" name="credentials[email]">
+            </label>
+            <label>
+              Password
+              <input type="password" name="credentials[password]">
+            </label>
+            <label>
+              Password Confirmation
+              <input type="password" name="credentials[password_confirmation]">
+            </label>
+            <input type="submit" name="submit" value="Sign up!">
+          </fieldset>
+          <div class="form-message" id="sign-up-prompt"></div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-      </ul>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Register/Sign In</button>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-<form id="sign-up">
-  <fieldset>
-    <legend>Sign up!</legend>
-    <label>
-      Email
-      <input type="text" name="credentials[email]">
-    </label>
-    <label>
-      Password
-      <input type="password" name="credentials[password]">
-    </label>
-    <label>
-      Password Confirmation
-      <input type="password" name="credentials[password_confirmation]">
-    </label>
-    <input type="submit" name="submit" value="Sign up!">
-  </fieldset>
-</form>
+  </div>
+</div>
+<!-- Sign in modal -->
+<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="SignUpModalLabel">Register for Battle!</h4>
+      </div>
+      <div class="modal-body">
+        <form id="sign-up">
+          <fieldset>
+            <legend>Sign up!</legend>
+            <label>
+              Email
+              <input type="text" name="credentials[email]">
+            </label>
+            <label>
+              Password
+              <input type="password" name="credentials[password]">
+            </label>
+            <label>
+              Password Confirmation
+              <input type="password" name="credentials[password_confirmation]">
+            </label>
+            <input type="submit" name="submit" value="Sign up!">
+          </fieldset>
+          <div class="form-message" id="sign-up-prompt"></div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <form id="sign-in">
   <fieldset>
@@ -106,7 +147,7 @@
   </fieldset>
 </form>
 </header>
-<body>
+<body class="container-fluid">
 
   <!-- These are the containers for the gameboard.  -->
     <div class="gameboard">
