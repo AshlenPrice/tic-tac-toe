@@ -23,6 +23,7 @@ body {
 
 .box {
   border: 4px solid $poke-yellow;
+  background: $white;
   height: 140px;
   padding: 40px;
   margin: 5px;
@@ -30,6 +31,14 @@ body {
   border-radius: 10px;
   box-shadow: 5px 5px 5px $poke-pan;
   text-align: center;
+  @media screen and (max-width: 650px) {
+    height: 50px;
+    font-size: 40px;
+  }
+}
+
+.col-xs-4:hover {
+  background: $poke-light-gray;
 }
 // .col-xs-4 {
 //   border: 1px solid $white;
@@ -45,13 +54,13 @@ body {
   border-radius: 8px;
   box-shadow: 5px 5px 5px $poke-yellow;
   clear: left;
-  height: 210px;
+  height: 420px;
   line-height: 200px;
   margin: 5px 0 0 20px;
   padding: 5px;
   position: relative;
   text-align: center;
-  width: 310px;
+  width: 420px;
   float: right;
 }
 //
@@ -68,9 +77,9 @@ body {
 //   top: 0;
 //   z-index: 1; }
 //
-#Pokemon-draw {
-  left: 0;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
+// #Pokemon-draw {
+//   left: 0;
+//   position: absolute;
+//   top: 0;
+//   z-index: 1;
+// }
