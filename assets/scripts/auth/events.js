@@ -5,34 +5,29 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 const store = require('../store');
-const engine = require('./engine');
+// const engine = require('./engine');
 // const engine = require('./engine');
 
 
 const onSignUp = function (event) {
   event.preventDefault();
-
   let data = getFormFields(event.target);
-
   api.signUp(data)
-    .then(ui.success)
-    .catch(ui.fail)
+    .then(ui.signUpsuccess)
+    .catch(ui.signUpfail)
     ;
 };
 
 const onSignIn = function (event) {
   event.preventDefault();
-
   let data = getFormFields(event.target);
-
   api.signIn(data)
     .then((response)=> {
       store.user = response.user;
       return store.user;
     })
-    .then(ui.success)
-    .catch(ui.fail)
-    ;
+    .then(ui.signInsuccess)
+    .catch(ui.signInfail);
 };
 
 const onChangePassword = function (event) {
@@ -41,8 +36,8 @@ const onChangePassword = function (event) {
   let data = getFormFields(event.target);
 
   api.changePassword(data)
-    .then(ui.success)
-    .catch(ui.failure)
+    .then(ui.changePwsuccess)
+    .catch(ui.changePwfailure)
     ;
 };
 
@@ -54,20 +49,19 @@ const onSignOut = function (event) {
       delete store.user;
       return store;
     })
-    .then(ui.success)
-    .catch(ui.fail)
-    ;
+    .then(ui.signOutsuccess)
+    .catch(ui.signOutfail);
 };
 
 
 
-const onShowGames = function (event) {
- event.preventDefault();
- api.showGames()
-.done(ui.success)
-.fail(ui.fail);
-};
-
+// const onShowGames = function (event) {
+//  event.preventDefault();
+//  api.showGames()
+// .done(ui.success)
+// .fail(ui.fail);
+// };
+//
 // const onCreateGames = function (event) {
 //  event.preventDefault();
 //  api.createGames()
@@ -79,34 +73,37 @@ const onShowGames = function (event) {
 // .fail(ui.fail);
 // };
 
-$('.box').on('click', (event) => {
- let currentCell = event.currentTarget.id;
- let engine.setMove = engine.changePlayer(currentCell);
-  $(event.currentTarget).text(moveSuccess);
-});
-
-$('.box').on('click', function(){
-  //  $(this.id);
-  console.log(this.id);
-});
-// //
-// $(document).on('click', 'span', function () {
-//     alert(this.id);
+// $('.box').on('click', (event) => {
+//  let currentCell = event.currentTarget.id;
+//  let engine.setMove = engine.changePlayer(currentCell);
+//   $(event.currentTarget).text(moveSuccess);
 // });
-$('#play-again-button').on('click', () => {
- engine.resetGameBoard();
-});
+//
+// $('.box').on('click', function(){
+//   //  $(this.id);
+//   console.log(this.id);
+// });
+// // //
+// // $(document).on('click', 'span', function () {
+// //     alert(this.id);
+// // });
+// $('#play-again-button').on('click', () => {
+//  engine.resetGameBoard();
+// });
 
 const addHandlers = () => {
  $('#sign-up').on('submit', onSignUp);
  $('#sign-in').on('submit', onSignIn);
  $('#sign-out').on('submit', onSignOut);
  $('#change-password').on('submit', onChangePassword);
- $('#previous-games').on('click', onShowGames);
- $('#play-again-button').on('click', onCreateGames);
+ // $('#previous-games').on('click', onShowGames);
+ // $('#play-again-button').on('click', onCreateGames);
 };
+
+
+
 
 module.exports = {
  addHandlers,
- onCreateGames,
+ // onCreateGames,
 };
