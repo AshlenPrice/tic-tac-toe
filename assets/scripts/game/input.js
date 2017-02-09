@@ -1,35 +1,44 @@
 'use strict';
 console.log('file running');
-
-const engine = require('./engine');
+const getFormFields = require('../../../lib/get-form-fields');
+// const engine = require('./engine');
 const api = require('../auth/api');
 const ui = require('./game-ui');
 const store = require('../store');
 
-const game = new engine.Game();
-
 
 //when clicking new game, this runs resetGameBoard function
-//   newGame.on('click', function(){
-//     resetGameBoard();
-//   });
+  const onNewGame= function(event){
+   event.preventDefault();
+  let data = getFormFields(event.target);
+  api.create(data)
+    .then((response) => {
+      store.game = response.game;
+      return store.game;
 
+    })
+    .then(ui.onPostSuccess)
+    .catch(ui.onError);
+};
 
-$('.box').on('click', function(){
-  let move = $(this).attr('id'); // c3
-  let boardIndex = game.gameSpaces.indexOf(move); //3
-  let currentMove = game.currentPlayer;
-  let isValid = game.setMove(boardIndex);
-  if (isValid === true) {
-    $(this).text(currentMove);
+const onGetGames = function (event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+
+  if (data.game.id.length === 0) {
+    api.index()
+    .then(ui.onIndexSuccess)
+    .catch(ui.onError);
+  } else {
+    api.show(data.game.id)
+    .then(ui.onGetSuccess)
+    .catch(ui.onError);
   }
+};
 
-});
-$('#new-battle').on('click', function (){
-console.log("stuff");
-game.resetGameBoard();
-
-});
+const addHandlers = () => {
+  $('#search-submit').on('submit', onGetGames);
+};
 
 // TODO
 // - create new game
@@ -43,5 +52,7 @@ game.resetGameBoard();
 //
 //
 module.exports = {
-  // newGame,
+  onNewGame,
+  onGetGames,
+  addHandlers,
 };

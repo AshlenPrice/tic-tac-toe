@@ -3,39 +3,18 @@ console.log('file running');
 
 const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
-const engine = require('./game/engine');
-const ui = require('./game/game-ui');
+const gameUi = require('./game/game-ui');
 const input = require('./game/input');
-// auth events
+const gameCliks= require('./game/game-clicks');
 const authEvents = require('./auth/events.js');
 
-// $(() => {
-//   setAPIOrigin(location, config);
-//   $('.auth-form').on('submit', authEvents.onFormSubmit);
-//   $('#sign-out').on('click', authEvents.handleSignOut);
-//   $('#get-games').on('click', gameEvents.getGames);
-//   $('#new-game').on('click', gameEvents.newGame);
-//   $('.gameboard').on('click', '.cell', gameEvents.makeMove);
-// });
+
 
 $(() => {
   setAPIOrigin(location, config);
-  //
-  // // when form is submitted then console log the input
-  // $("form").on("submit", function(event){
-  //   event.preventDefault();
-  //   let input = $("#name").val();
-  //   console.log(input);
-  // });
-
-
 });
 
-// when form is submitted then console log the input
-// const authEvents = require('./auth/events.js');
 
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example');
 $(() => {
   authEvents.addHandlers();
 });

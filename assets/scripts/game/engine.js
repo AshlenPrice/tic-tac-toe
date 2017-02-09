@@ -80,6 +80,7 @@ Game.prototype.winner = function() {
     (this.board[2] === this.currentPlayer && this.board[5] === this.currentPlayer && this.board[8] === this.currentPlayer) ||
     (this.board[0] === this.currentPlayer && this.board[4] === this.currentPlayer && this.board[8] === this.currentPlayer) ||
     (this.board[2] === this.currentPlayer && this.board[4] === this.currentPlayer && this.board[6] === this.currentPlayer)) {
+      $('.message-box').text(this.currentPlayer + 'is the WINNER');
     console.log(this.currentPlayer + ' is the WINNER!');
     this.gameOver = true;
     return this.currentPlayer + 'is the WINNER!';
@@ -115,6 +116,7 @@ let newGame = new Game();
  return newGame;
 }
 */
+
 
 function newGame() {
   let newGame = new Game();
