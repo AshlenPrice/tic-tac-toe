@@ -12,6 +12,8 @@ const input = require('./input');
 
 const game = new engine.Game();
 
+// const addGameHandlers = () => {
+
 $('.box').on('click', function(){
   let move = $(this).attr('id'); // c3
   let boardIndex = game.gameSpaces.indexOf(move); //3
@@ -22,13 +24,14 @@ $('.box').on('click', function(){
   }
 
 });
+
 $('#new-battle').on('click', function (){
 console.log("stuff");
 game.resetGameBoard();
 
 });
 
-
+// };
 
 
 
@@ -36,5 +39,5 @@ game.resetGameBoard();
 
 
 module.exports = {
-  // newGame,
+  // addGameHandlers
 };

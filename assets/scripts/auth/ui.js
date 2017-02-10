@@ -1,11 +1,11 @@
 'use strict';
 
 const success = () => {
-  $('#status-box').text('Action Successful');
+  $('#prompt').text('Action Successful');
 };
 
 const signUpSuccess = () => {
-  $('#sign-up-prompt').text('Account Created');
+  $('#sign-up-prompt').text('Alrigt! Account Created!');
   $('#signUpModal').modal('hide');
 };
 
@@ -16,32 +16,57 @@ const signUpFail = () => {
 
 const signInFail = () => {
   $('#sign-in-prompt').text
-  ('Try again! The information does not match!');
+  ('Uh-Oh! Please Try Again!');
 };
 
 const changePwSuccess = () => {
-  $('#message-box').text
+  $('#change-pw-prompt').text
   ('Password Changed Successfully!');
   $('#changePwModal').modal('hide');
 };
 
 const changePwFail = () => {
   $('#change-pw-prompt').text
-  ('Please fill out the fields.');
+  ('Uh-Oh! Please Try Again!');
 };
 
 const failure = () => {
-  $('#message-box').text
+  $('#prompt').text
   ('Theres seems to have been an error');
 };
+// On sign in, un-hide game board elements
 
+const signInSuccess = () => {
+  $('#sign-in-prompt').text('Sign In Successful');
+  $('#signUpButton').addClass('hidden');
+  $('#signInButton').addClass('hidden');
+  $('#changePwButton').removeClass('hidden');
+  $('#signOutButton').removeClass('hidden');
+  $('#game-log').removeClass('hidden');//corresponds to game history button
+};
+
+// On sign out, hide game board elements
+
+const signOutSuccess = () => {
+  $('#prompt').text('Sign Out Successful.  Please Sign Up or Sign In to battle again.');
+  $('.create-board-button').addClass('hidden');
+  $('.gameboard').addClass('hidden');
+  $('#game-log').addClass('hidden');
+  $('#signUpButton').removeClass('hidden');
+  $('#signInButton').removeClass('hidden');
+  $('#changePwButton').addClass('hidden');
+  $('#signOutButton').addClass('hidden');
+
+};
 
 module.exports = {
   failure,
   success,
   signUpSuccess,
   signUpFail,
+  signInSuccess,
   signInFail,
   changePwFail,
   changePwSuccess,
+  signOutSuccess,
 };

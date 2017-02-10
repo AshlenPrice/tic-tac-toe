@@ -30,10 +30,13 @@ Game.prototype.fullBoard = function() {
   if (!this.gameOver) {
     for (let i = 0; i < 9; i++) {
       if (this.board[i] === '') {
+
         return false;
       }
     }
     this.gameOver = true;
+    $('.message-box').text(this.currentPlayer + 'is the WINNER');
+
     console.log('The game is a draw'); // need to change something here. Printing the game is a draw after every change turn
     return true;
   }
@@ -80,20 +83,16 @@ Game.prototype.winner = function() {
     (this.board[2] === this.currentPlayer && this.board[5] === this.currentPlayer && this.board[8] === this.currentPlayer) ||
     (this.board[0] === this.currentPlayer && this.board[4] === this.currentPlayer && this.board[8] === this.currentPlayer) ||
     (this.board[2] === this.currentPlayer && this.board[4] === this.currentPlayer && this.board[6] === this.currentPlayer)) {
+      //Not working - not sure why.
       $('.message-box').text(this.currentPlayer + 'is the WINNER');
+
     console.log(this.currentPlayer + ' is the WINNER!');
     this.gameOver = true;
     return this.currentPlayer + 'is the WINNER!';
   }
 };
 
-/*
-  POSSIBLE WAYS TO MAKE THIS WORK
-  - a loop of some sort (forEach,array method findIndex, or find.)
-      if currentPlayer has an []in board === the i of the [] inside the wins[]
-      then console.log(currentPlayer wins );
-  let the winning array
-*/
+//this resets the gameboard
 Game.prototype.resetGameBoard = function() {
   this.board = ['', '', '', '', '', '', '', '', ''];
 $ (".box").empty();
@@ -101,27 +100,13 @@ this.gameOver = false;
 };
 
 
-// Game.prototype.reset = function () {
-//   this.currentPlayer = 'x';
-//   this.gameOver = false;
-//   this.board = this.newBoard.slice();
-//   return this.board;
-// };
 
 // this creates the new game
-/*
-MAY NOT NEED THIS
-function newGame() {
-let newGame = new Game();
- return newGame;
-}
-*/
-
-
 function newGame() {
   let newGame = new Game();
   return newGame;
 }
+
 console.log('engine-works');
 
 module.exports = {

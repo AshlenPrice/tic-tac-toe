@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Pik-Pak-Pokémon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +26,7 @@
     <button type="button" class="btn btn-primary" id="SignInButton" data-toggle="modal" data-target="#signInModal">
     Sign In to Battle!
     </button>
-    <button type="button" class="btn btn-primary" id="ChangePwButton" data-toggle="modal" data-target="#changePwModal">
+    <button type="button" class="btn btn-primary " id="ChangePwButton" data-toggle="modal" data-target="#changePwModal">
     Change Password!
     </button>
     <button type="button" class="btn btn-primary " id="SignOutButton">
@@ -35,112 +36,112 @@
 
   <!-- User account Modals -->
   <!-- Sign-Up -->
-<div class="registration">
-  <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <div class="registration">
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-          <h4 class="modal-title" id="SignUpModalLabel">Register for Battle!</h4>
-        </div>
-        <div class="modal-body">
-          <form id="sign-up">
-            <fieldset>
-              <legend>Sign up!</legend>
-              <label>
+            <h4 class="modal-title" id="SignUpModalLabel">Register for Battle!</h4>
+          </div>
+          <div class="modal-body">
+            <form id="sign-up">
+              <fieldset>
+                <legend>Sign up!</legend>
+                <label>
               Email
               <input type="text" name="credentials[email]">
             </label>
-              <label>
+                <label>
               Password
               <input type="password" name="credentials[password]">
             </label>
-              <label>
+                <label>
               Password Confirmation
               <input type="password" name="credentials[password_confirmation]">
             </label>
-              <input type="submit" name="submit" value="Sign up!">
-            </fieldset>
-            <div class="form-message" id="sign-up-prompt"></div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input type="submit" name="submit" value="Sign up!">
+              </fieldset>
+              <div class="form-message" id="sign-up-prompt"></div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- Sign in modal -->
+    <!-- Sign in modal -->
 
-  <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-          <h4 class="modal-title" id="SignInModalLabel">Sing In To Battle!</h4>
-        </div>
-        <div class="modal-body">
-          <form id="sign-in">
-            <fieldset>
-              <legend>Sign In!</legend>
-              <label>
+            <h4 class="modal-title" id="SignInModalLabel">Sing In To Battle!</h4>
+          </div>
+          <div class="modal-body">
+            <form id="sign-in">
+              <fieldset>
+                <legend>Sign In!</legend>
+                <label>
               Email
               <input type="text" name="credentials[email]">
             </label>
-              <label>
+                <label>
               Password
               <input type="password" name="credentials[password]">
             </label>
-              <input type="submit" name="submit" value="Sign In!">
-            </fieldset>
-            <div class="form-message" id="sign-in-prompt"></div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input type="submit" name="submit" value="Sign In!">
+              </fieldset>
+              <div class="form-message" id="sign-in-prompt"></div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- change password modal -->
+    <!-- change password modal -->
 
-  <div class="modal fade" id="changePwModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="modal fade" id="changePwModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-          <h4 class="modal-title" id="ChangePwModalLabel">Change Your Password!</h4>
-        </div>
-        <div class="modal-body">
-          <form id="change-password">
-            <fieldset>
-              <legend>Change Password!</legend>
-              <label>
+            <h4 class="modal-title" id="ChangePwModalLabel">Change Your Password!</h4>
+          </div>
+          <div class="modal-body">
+            <form id="change-password">
+              <fieldset>
+                <legend>Change Password!</legend>
+                <label>
               Current Password
               <input type="password" type="current password" name="credentials[old]">
             </label>
-              <label>
+                <label>
               New Password
               <input type="password" type="new password" name="credentials[new]">
             </label>
-              <input type="submit" name="submit" value="Change Password!">
-            </fieldset>
-            <div class="form-message" id="change-pw-prompt"></div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input type="submit" name="submit" value="Change Password!">
+              </fieldset>
+              <div class="form-message" id="change-pw-prompt"></div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 </header>
 
@@ -166,7 +167,7 @@
   </div>
 
 
-  <!-- <div class="status-box" id="message-box">Please Sign Up or Sign In to play.</div> -->
+  <div class="statusbox" id="prompt">Please Sign Up or Sign In to play.</div>
 
   <div class="right-column">
 
@@ -192,23 +193,23 @@
     </div>
 
     <!-- Game outcome msg -->
-      <div class="status-box"         id="message-box"></div>
+    <div class="status-box" id="message-box"></div>
 
-      <!-- this div houses next step for player -->
-      <div class="game-buttons">
+    <!-- this div houses next step for player -->
+    <div class="game-buttons">
       <!-- creates new game -->
       <div class="rematch new-game">
-      <button type="button" class="btn btn-success create-new-game" id="new-battle">
+        <button type="button" class="btn btn-success create-new-game" id="new-battle">
       Want a Rematch ?
       </button>
       </div>
       <!--Button to show battle log(past games played)  -->
       <div class="battle-log game-history">
-      <button type="button" class="btn btn-success show-games" id="game-log">
+        <button type="button" class="btn btn-success show-games" id="game-log">
       See your battle log!
       </button>
       </div>
-  </div>
+    </div>
   </div>
 
 

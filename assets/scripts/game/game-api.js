@@ -35,9 +35,9 @@ const show = function (id) {
   });
 };
 
-const update = function (id, gameIndex, player, gameOver) {
+const update = function (index, value) {
   return $.ajax({
-    url: config.apiOrigin + '/games/' + id,
+    url: config.apiOrigin + '/games/' + store.id,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,
@@ -45,8 +45,8 @@ const update = function (id, gameIndex, player, gameOver) {
     data: {
       game: {
         cell: {
-          index: gameIndex,
-          value: player,
+          index: index,
+          value: game.currentPlayer,
         },
         over: gameOver,
       },
@@ -59,5 +59,5 @@ module.exports = {
   show,
   create,
   update,
-  game,
+  // game,
 };

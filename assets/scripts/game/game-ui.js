@@ -1,49 +1,25 @@
 'use strict';
-console.log('file running');
-// in this file enter all messages that display to the user
-const onSuccess = function (data) {
-  if (data.game) {
-    console.log(data.game);
-  } else {
-    console.log(data.games);
-  }
+
+
+const success = () => {
+  $('#promt').text('Action Successful');
 };
 
-const onIndexSuccess = function (data) {
-  if (data.games) {
-    console.log(data.games);
-    for (let i = 0; i < data.games.length; i++) {
-      $('#search-result').text('You played this game ' + data.games.length + ' times! ');
-      // $('#search-result').append(' You won this game ' + data.games[i].over[true].length + ' times!');
-      $('#search-result').append("Most recent game: " + data.games[i].id + ": " + data.games[i].cells);
-    }
-  }
+const createSuccess = () => {
+  $('#promt').text('New Game Successfully Created');
 };
 
-const onGetSuccess = function (data) {
-  if (data.game) {
-    console.log(data.game);
-    $('#search-result').text(data.game.cells);
-  }
+const onPatchSuccess = () => {
+  $('#promt').text('Game successfully updated');
 };
 
-const onError = function (response) {
-  console.error(response);
-};
-
-const onPostSuccess = function (data) {
-  console.log(data);
-};
-
-const onPatchSuccess = function (data) {
-  console.log(data.game);
+const failure = () => {
+  $('#status-box').text('There seems to have been an error');
 };
 
 module.exports = {
-  onSuccess,
-  onError,
-  onPostSuccess,
+  failure,
+  success,
+  createSuccess,
   onPatchSuccess,
-  onGetSuccess,
-  onIndexSuccess,
 };
