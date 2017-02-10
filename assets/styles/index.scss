@@ -1,17 +1,32 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'colors';
+// sass variables
 $padding: 8px;
 
+
 header {
-  text-align: center;
   background-color: $poke-light-gray;
+  text-align: center;
+}
+
+.user-account {
+  margin: 50px;
+  padding: 10px 0 20px;
+}
+
+.modal-content {
+  background-color: $poke-pan;
+  color: $poke-gray;
 }
 
 body {
   font-family: 'Nova Mono', monospace;
   background-color: $poke-cerulean-blue;
   color: $poke-yellow;
+   @media screen and (max-width: 650px){
+
+   }
 }
 
 .gameboard {
@@ -19,12 +34,15 @@ body {
   width: 50%;
   height: 50%;
   float: left;
+  text-align: center;
+  display: inline-block;
 }
 
 .box {
   border: 4px solid $poke-yellow;
   background: $white;
   height: 140px;
+  display: inline-block;
   padding: 40px;
   margin: 5px;
   width: 20%;
@@ -37,25 +55,21 @@ body {
   }
 }
 
-.col-xs-4:hover {
+.box:hover {
   background: $poke-light-gray;
 }
-// .col-xs-4 {
-//   border: 1px solid $white;
-//   height: 30%;
-//   min-height: 30%;
-// }
 
 .right-column {
   display: inline-block;
 }
 
 .scoreboard {
+  // background: url('http://i.imgur.com/PmTX650.jpg') top center no-repeat;
   background-color: $poke-citron;
   border-radius: 8px;
   box-shadow: 5px 5px 5px $poke-yellow;
   clear: left;
-  height: 420px;
+  height: 220px;
   line-height: 200px;
   margin: 5px 0 0 20px;
   padding: 5px;
@@ -65,27 +79,89 @@ body {
   float: right;
 }
 
+.status-box {
+  width: 420px;
+  height: 100px;
+  border: 1px solid $white;
+  clear: both;
+  padding-top: 10px;
+  margin-top: 5px;
+}
+
+.game-buttons {
+  margin: 15px;
+  padding: 30px;
+}
+
+.rematch {
+  margin: 5px;
+  float: left;
+  clear: left;
+}
+
+.battle-log {
+  margin: 5px;
+  float: right;
+  clear: right;
+}
+
 footer {
   background-color: $poke-light-gray;
   text-align: center;
-  bottom: 0; // fixed position at the bottom of the scren
+  bottom: 0;
   clear: both;
   color: $white;
-  padding-bottom: $padding; // gives text buffer from top/bottom of div
+  padding-bottom: $padding;
   padding-top: $padding;
-  // gives text buffer from top/bottom of div
-  position: fixed; // uses the bottom location
-  width: 100%; // keeps it the width of the page
+  position: fixed;
+  width: 100%;
 }
-// #lillipup-win {
+
+.pokemon {
+  float: left;
+  height: 100px;
+  line-height: 50px;
+  margin: 5%;
+}
+
+.osha-profile {
+  border-radius: 5px;
+  height: 140px;
+  margin: 13px;
+  width: 120px;
+}
+
+.pika-profile {
+  border-radius: 5px;
+  height: 140px;
+  margin: 13px;
+  width: 120px;
+}
+
+.wins {
+  color: $white;
+  display: inline;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  height: 20px;
+  width: 20px;
+}
+img {
+  border-radius: 8px;
+}
+// #pikachu-win {
 //   left: 0;
+//   height: 140;
+//   width: 210;
 //   position: absolute;
 //   top: 0;
 //   z-index: 1;
 // }
 //
-// #Mawile-win {
+// #oshawott-win {
 //   left: 0;
+//   height: 140;
+//   width: 210;
 //   position: absolute;
 //   top: 0;
 //   z-index: 1; }
