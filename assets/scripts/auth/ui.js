@@ -20,12 +20,14 @@ const signInFail = () => {
 };
 
 const changePwSuccess = () => {
+  console.log("success");
   $('#change-pw-prompt').text
   ('Password Changed Successfully!');
   $('#changePwModal').modal('hide');
 };
 
-const changePwFail = () => {
+const changePwFail = (data) => {
+  console.log('fail', data);
   $('#change-pw-prompt').text
   ('Uh-Oh! Please Try Again!');
 };
@@ -37,12 +39,13 @@ const failure = () => {
 // On sign in, un-hide game board elements
 
 const signInSuccess = () => {
-  $('#sign-in-prompt').text('Sign In Successful');
+  $('#prompt').text('Ready For Battle!');
   $('#signUpButton').addClass('hidden');
   $('#signInButton').addClass('hidden');
   $('#changePwButton').removeClass('hidden');
-  $('#signOutButton').removeClass('hidden');
-  $('#game-log').removeClass('hidden');//corresponds to game history button
+  $('#signout').removeClass('hidden');
+  $('#game-lsog').removeClass('hidden');//corresponds to game history button
+  $('#signInModal').modal('hide');
 };
 
 // On sign out, hide game board elements

@@ -26,6 +26,7 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then((response)=> {
       store.user = response.user;
+      console.log('store.user', store.user);
       return store.user;
     })
     .then(ui.signInSuccess)

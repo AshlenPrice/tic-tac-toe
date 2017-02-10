@@ -20,16 +20,16 @@
   <img src="http://fontmeme.com/permalink/170129/b3d41c6e772d39fbbb66c163ece2b307.png" alt="pokemon-font" border="0">
   <!-- Buttons for user account informantion, they have corresponding modals -->
   <div class="user-account">
-    <button type="button" class="btn btn-primary" id="SignUpButton" data-toggle="modal" data-target="#signUpModal">
+    <button type="button" class="btn btn-primary" id="signUpButton" data-toggle="modal" data-target="#signUpModal">
     Register for Battle!
     </button>
-    <button type="button" class="btn btn-primary" id="SignInButton" data-toggle="modal" data-target="#signInModal">
+    <button type="button" class="btn btn-primary" id="signInButton" data-toggle="modal" data-target="#signInModal">
     Sign In to Battle!
     </button>
-    <button type="button" class="btn btn-primary " id="ChangePwButton" data-toggle="modal" data-target="#changePwModal">
+    <button type="button" class="btn btn-primary hidden" id="changePwButton" data-toggle="modal" data-target="#changePwModal">
     Change Password!
     </button>
-    <button type="button" class="btn btn-primary " id="SignOutButton">
+    <button type="button" class="btn btn-primary hidden" id="signout">
     Sign Out!
     </button>
   </div>
@@ -124,11 +124,11 @@
                 <legend>Change Password!</legend>
                 <label>
               Current Password
-              <input type="password" type="current password" name="credentials[old]">
+              <input type="password" type="current password" name="passwords[old]">
             </label>
                 <label>
               New Password
-              <input type="password" type="new password" name="credentials[new]">
+              <input type="password" type="new password" name="passwords[new]">
             </label>
                 <input type="submit" name="submit" value="Change Password!">
               </fieldset>
@@ -141,6 +141,12 @@
         </div>
       </div>
     </div>
+    <!-- <form id="sign-out">
+   <fieldset>
+   <legend>Sign Out!</legend>
+   <input type="submit" name="submit" value="Sign Out!">
+   </fieldset>
+ </form> -->
   </div>
 
 </header>
@@ -205,7 +211,7 @@
       </div>
       <!--Button to show battle log(past games played)  -->
       <div class="battle-log game-history">
-        <button type="button" class="btn btn-success show-games" id="game-log">
+        <button type="button" class="btn btn-success show-games hidden" id="game-log">
       See your battle log!
       </button>
       </div>
