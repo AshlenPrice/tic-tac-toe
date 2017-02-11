@@ -4,9 +4,8 @@ console.log('file running');
 const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');
 
-
-// const gameUi = require('./game/game-ui');
-// const input = require('./game/input');
+// const gameAPI = require('./game/api');
+// const gameEvents = require('./game/events');
 
 // auth events
 const gameCliks= require('./game/game-clicks');

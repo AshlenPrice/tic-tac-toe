@@ -4,8 +4,8 @@ console.log('game-clicks running');
 const engine = require('./engine');
 const api = require('../auth/api');
 const store = require('../store');
-const ui = require('./game-ui');
-const input = require('./input');
+const ui = require('./ui');
+const gameEvents = require('./events');
 // auth events
 
 
@@ -25,13 +25,11 @@ $('.box').on('click', function(){
 
 });
 
-$('#new-battle').on('click', function (){
-console.log("stuff");
-game.resetGameBoard();
-$('#message-box').text(' ');
-});
-
-
+// $('#new-battle').on('click', function (){
+// console.log("stuff");
+// game.resetGameBoard();
+// $('#message-box').text(' ');
+// });
 
 
 

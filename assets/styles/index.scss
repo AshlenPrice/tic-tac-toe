@@ -25,13 +25,15 @@ header {
 }
 
 .form-message{
-  font-size: 20px;
+  font-size: 40px;
 }
 
 body {
   font-family: 'Nova Mono', monospace;
   background-color: $poke-cerulean-blue;
-  color: $poke-yellow;
+  color: $poke-gray;
+  font-size: 20px;
+  text-align: center;
    @media screen and (max-width: 650px){
 
    }
@@ -100,8 +102,11 @@ body {
   width: 420px;
   height: 100px;
   border: 1px solid $white;
+  border-radius: 8px;
   clear: both;
+  font-size: 30px;
   padding-top: 10px;
+  position: relative;
   margin-top: 5px;
 }
 

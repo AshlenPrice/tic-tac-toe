@@ -2,12 +2,25 @@
 console.log('file running');
 const getFormFields = require('../../../lib/get-form-fields');
 // const engine = require('./engine');
-const gameApi = require('./game-api');
-const gameUi = require('./game-ui');
+const gameApi = require('./api');
+const gameUi = require('./ui');
 const store = require('../store');
 
 
 //when clicking new game, this runs resetGameBoard function
+const onCreate = function (event) {
+  console.log('creating game');
+  event.preventDefault();
+
+    gameApi.create(data)
+    .then((response) => {
+      store.game = response.game;
+    })
+    .then(gameUi.createSuccess)
+    .catch(gameUi.failure);
+};
+
+
 const onIndex = function (event) {
   event.preventDefault();
   gameApi.getIndex()
@@ -15,16 +28,7 @@ const onIndex = function (event) {
     .catch(gameUi.failure);
 };
 
-const onCreate = function (event) {
-  event.preventDefault();
-  gameApi.create()
-    .then((response) => {
-      gameStore.game = response.game;
-      return gameStore.game;
-    })
-    .then(gameUi.createSuccess)
-    .catch(gameUi.failure);
-};
+
 
 const onShow = function (event) {
   event.preventDefault();
@@ -48,7 +52,7 @@ const totalGamesPlayed = function (event) {
 
 const addAjaxHandlers = () => {
   $('#get-index').on('submit', onIndex);
-  $('.create-board-button').on('click', onCreate);
+  $('#new-battle').on('click', onCreate);
   $('#showGameById').on('submit', onShow);
   $('#total-games-played').on('click', totalGamesPlayed);
 };
@@ -56,5 +60,6 @@ const addAjaxHandlers = () => {
 module.exports = {
   addAjaxHandlers,
   onIndex,
+  onCreate,
   onShow,
 };

@@ -1,4 +1,7 @@
 'use strict';
+const gameApi = require('./api');
+const gameUi = require('./ui');
+
 console.log('engine-works');
 
 const Game = function() {
@@ -82,11 +85,12 @@ Game.prototype.winner = function() {
       //Not working - not sure why.
       $('#message-box').text(this.currentPlayer + ' is the WINNER');
     this.gameOver = true;
-    return this.currentPlayer + 'is the WINNER!';
-  }
+      }
+      // gameApi.updateGameStatus(!this.gameOver);
 };
 
 //this resets the gameboard
+
 Game.prototype.resetGameBoard = function() {
   this.board = ['', '', '', '', '', '', '', '', ''];
 $('.box').empty();
@@ -94,10 +98,17 @@ this.gameOver = false;
 this.currentPlayer = 'X';
 };
 
-
+//
+// const newGame = new Game();
+//
+// $('#new-battle').on('click', function () {
+// this.resetGameBoard();
+// $('#message-box').text(' ');
+// });
 
 
 
 module.exports = {
   Game,
+  // newGame
 };

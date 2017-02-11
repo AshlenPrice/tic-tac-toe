@@ -1,5 +1,5 @@
 'use strict';
-console.log('file running');
+console.log('gm_api file running');
 const config = require('../config.js');
 const store = require('../store.js');
 const engine = require('./engine');
@@ -16,13 +16,15 @@ const getIndex = function () {
   });
 };
 
-const create = function () {
+const create = function (data) {
+  console.log(data);
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'POST',
     headers: {
       Authorization: `Token token=${store.user.token}`,
     },
+    data,
   });
 };
 

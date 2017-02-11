@@ -10,11 +10,11 @@ const createSuccess = () => {
 };
 
 const onPatchSuccess = () => {
-  $('#promt').text('Game successfully updated');
+  $('#promt').text('Game Updated');
 };
 
 const failure = () => {
-  $('#status-box').text('There seems to have been an error');
+  $('#promt').text('There seems to have been an error');
 };
 
 module.exports = {
