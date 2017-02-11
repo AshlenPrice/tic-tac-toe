@@ -8,51 +8,53 @@ const store = require('../store');
 
 
 //when clicking new game, this runs resetGameBoard function
-  const onNewGame= function(event){
-   event.preventDefault();
-  let data = getFormFields(event.target);
-  api.create(data)
-    .then((response) => {
-      store.game = response.game;
-      return store.game;
-
-    })
-    .then(ui.onPostSuccess)
-    .catch(ui.onError);
-};
-
-const onGetGames = function (event) {
+const onIndex = function (event) {
   event.preventDefault();
-  let data = getFormFields(event.target);
-
-  if (data.game.id.length === 0) {
-    api.index()
-    .then(ui.onIndexSuccess)
-    .catch(ui.onError);
-  } else {
-    api.show(data.game.id)
-    .then(ui.onGetSuccess)
-    .catch(ui.onError);
-  }
+  gameApi.getIndex()
+    .then(gameUi.success)
+    .catch(gameUi.failure);
 };
 
-const addHandlers = () => {
-  $('#search-submit').on('submit', onGetGames);
+const onCreate = function (event) {
+  event.preventDefault();
+  gameApi.create()
+    .then((response) => {
+      gameStore.game = response.game;
+      return gameStore.game;
+    })
+    .then(gameUi.createSuccess)
+    .catch(gameUi.failure);
 };
 
-// TODO
-// - create new game
-// */
-// // in the inputs.js setup game handles
-// // setup event listeners : what happens when i clicks in index.js
-//
-// //
-// // $('#previous-games').on('click', onShowGames);
-//
-//
-//
+const onShow = function (event) {
+  event.preventDefault();
+  let id = parseInt($('#game-id').val());
+  gameApi.show(id)
+    .then(gameUi.success)
+    .catch(gameUi.failure);
+};
+
+const totalGamesPlayed = function (event) {
+  event.preventDefault();
+  gameApi.getIndex()
+    .then((response) => {
+      gameStore.games = response.games;
+      $('#show-total-games').text('You have played ' + gameStore.games.length + ' games.');
+      return gameStore.games.length;
+    })
+    .then(gameUi.success)
+    .catch(gameUi.failure);
+};
+
+const addAjaxHandlers = () => {
+  $('#get-index').on('submit', onIndex);
+  $('.create-board-button').on('click', onCreate);
+  $('#showGameById').on('submit', onShow);
+  $('#total-games-played').on('click', totalGamesPlayed);
+};
+
 module.exports = {
-  onNewGame,
-  onGetGames,
-  addHandlers,
+  addAjaxHandlers,
+  onIndex,
+  onShow,
 };

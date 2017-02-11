@@ -38,7 +38,7 @@ const show = function (id) {
 
 const update = function (index, value) {
   return $.ajax({
-    url: config.apiOrigin + '/games/' + gameStore.game.id,
+    url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,
@@ -56,7 +56,7 @@ const update = function (index, value) {
 
 const updateGameStatus = function (over) {
   return $.ajax({
-    url: config.apiOrigin + '/games/' + gameStore.game.id,
+    url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,
