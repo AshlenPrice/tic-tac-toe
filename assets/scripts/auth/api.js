@@ -35,7 +35,7 @@ const changePassword = function (data) {
   });
 };
 
-const signout = function () {
+const signOut = function () {
   return $.ajax({
     url: `${config.apiOrigin}/sign-out/${store.user.id}`,
     method: 'DELETE',
@@ -51,5 +51,5 @@ module.exports = {
   signUp,
   signIn,
   changePassword,
-  signout,
+  signOut,
 };

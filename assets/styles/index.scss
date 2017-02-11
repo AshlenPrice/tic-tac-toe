@@ -45,6 +45,7 @@ body {
   margin: 40px;
   width: 50%;
   height: 50%;
+  float: left;
   text-align: center;
   display: inline-block;
 }
@@ -71,6 +72,8 @@ body {
 }
 
 .right-column {
+  float: left;
+
   display: inline-block;
 }
 
@@ -87,7 +90,6 @@ body {
   position: relative;
   text-align: center;
   width: 420px;
-  float: right;
 }
 
 .hidden{

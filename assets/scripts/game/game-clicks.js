@@ -28,7 +28,7 @@ $('.box').on('click', function(){
 $('#new-battle').on('click', function (){
 console.log("stuff");
 game.resetGameBoard();
-
+$('#message-box').text(' ');
 });
 
 

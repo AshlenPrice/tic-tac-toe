@@ -1,8 +1,6 @@
 'use strict';
+console.log('engine-works');
 
-// Create an array made of the html ids of each box on the grid.  I be used to determine the index of each move.
-
-// let newGame = ('#reset');
 const Game = function() {
   this.board = ['', '', '', '', '', '', '', '', ''];
   this.gameSpaces = ["c0", "c1", "c2", "c3", "c4", "c5", "c6", "c7", "c8"];
@@ -35,9 +33,7 @@ Game.prototype.fullBoard = function() {
       }
     }
     this.gameOver = true;
-    $('.message-box').text(this.currentPlayer + 'is the WINNER');
-
-    console.log('The game is a draw'); // need to change something here. Printing the game is a draw after every change turn
+    $('#message-box').text('This Match is Tie!');
     return true;
   }
 };
@@ -93,21 +89,15 @@ Game.prototype.winner = function() {
 //this resets the gameboard
 Game.prototype.resetGameBoard = function() {
   this.board = ['', '', '', '', '', '', '', '', ''];
-$ ('.box').empty();
+$('.box').empty();
 this.gameOver = false;
+this.currentPlayer = 'X';
 };
 
 
 
-// this creates the new game
-function newGame() {
-  let newGame = new Game();
-  return newGame;
-}
 
-console.log('engine-works');
 
 module.exports = {
   Game,
-  newGame,
 };

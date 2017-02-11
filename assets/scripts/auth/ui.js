@@ -43,7 +43,7 @@ const signInSuccess = () => {
   $('#signUpButton').addClass('hidden');
   $('#signInButton').addClass('hidden');
   $('#changePwButton').removeClass('hidden');
-  $('#signout').removeClass('hidden');
+  $('#sign-out').removeClass('hidden');
   $('#game-log').removeClass('hidden');//corresponds to game history button
   $('#signInModal').modal('hide');
 };
@@ -53,8 +53,7 @@ const signInSuccess = () => {
 const signOutSuccess = () => {
   $('#prompt').text('Sign Out Successful!');
   $('.create-board-button').addClass('hidden');
-  $('.gameboard').addClass('hidden');
-  $('#game-log').addClass('hidden');
+  // $('#game-log').addClass('hidden');
   $('#signUpButton').removeClass('hidden');
   $('#signInButton').removeClass('hidden');
   $('#changePwButton').addClass('hidden');
