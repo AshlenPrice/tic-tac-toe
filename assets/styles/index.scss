@@ -20,6 +20,10 @@ header {
   color: $poke-gray;
 }
 
+.form-message{
+  font-size: 20px;
+}
+
 body {
   font-family: 'Nova Mono', monospace;
   background-color: $poke-cerulean-blue;
@@ -29,11 +33,14 @@ body {
    }
 }
 
+.center-buttons {
+  text-align: center;
+}
+
 .gameboard {
   margin: 40px;
   width: 50%;
   height: 50%;
-  float: left;
   text-align: center;
   display: inline-block;
 }
@@ -80,7 +87,7 @@ body {
 }
 
 .hidden{
-  display: none;
+  visibility: hidden;
 }
 
 .status-box {

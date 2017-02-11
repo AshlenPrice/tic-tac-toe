@@ -44,14 +44,14 @@ const signInSuccess = () => {
   $('#signInButton').addClass('hidden');
   $('#changePwButton').removeClass('hidden');
   $('#signout').removeClass('hidden');
-  $('#game-lsog').removeClass('hidden');//corresponds to game history button
+  $('#game-log').removeClass('hidden');//corresponds to game history button
   $('#signInModal').modal('hide');
 };
 
 // On sign out, hide game board elements
 
 const signOutSuccess = () => {
-  $('#prompt').text('Sign Out Successful.  Please Sign Up or Sign In to battle again.');
+  $('#prompt').text('Sign Out Successful!');
   $('.create-board-button').addClass('hidden');
   $('.gameboard').addClass('hidden');
   $('#game-log').addClass('hidden');

@@ -31,7 +31,7 @@ game.resetGameBoard();
 
 });
 
-// };
+
 
 
 

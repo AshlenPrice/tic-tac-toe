@@ -29,13 +29,13 @@
     <button type="button" class="btn btn-primary hidden" id="changePwButton" data-toggle="modal" data-target="#changePwModal">
     Change Password!
     </button>
-    <button type="button" class="btn btn-primary hidden" id="signout">
+    <button type="button" class="btn btn-primary hidden" value="input" type="submit" name="submit" id="sign-out">
     Sign Out!
     </button>
   </div>
 
   <!-- User account Modals -->
-  <!-- Sign-Up -->
+    <!-- Sign-Up -->
   <div class="registration">
     <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
@@ -141,20 +141,22 @@
         </div>
       </div>
     </div>
-    <!-- <form id="sign-out">
-   <fieldset>
-   <legend>Sign Out!</legend>
-   <input type="submit" name="submit" value="Sign Out!">
-   </fieldset>
- </form> -->
+      <!-- <form id="sign-out">
+      <fieldset>
+      <legend>Sign Out!</legend>
+      <input type="submit" name="submit" value="Sign Out!">
+    </fieldset>
+    </form> -->
   </div>
 
 </header>
 
 <body class="container-fluid">
-
+  <div class="center-buttons">
+  <button type="button" class="btn btn-primary create-board-button hidden">New Battle</button>
+  </div>
   <!-- These are the containers for the gameboard.  -->
-  <div class="gameboard left-column" id="showBoard">
+  <div class="center gameboard" id="showBoard">
     <div class="col-xs-12 row">
       <div class="col-xs-4 box" id="c0"></div>
       <div class="col-xs-4 box" id="c1"></div>
