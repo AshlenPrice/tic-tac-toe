@@ -2,8 +2,8 @@
 console.log('file running');
 const getFormFields = require('../../../lib/get-form-fields');
 // const engine = require('./engine');
-const api = require('./game-api');
-const ui = require('./game-ui');
+const gameApi = require('./game-api');
+const gameUi = require('./game-ui');
 const store = require('../store');
 
 

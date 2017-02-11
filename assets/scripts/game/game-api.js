@@ -4,21 +4,22 @@ const config = require('../config.js');
 const store = require('../store.js');
 const engine = require('./engine');
 
-const create = function (data) {
-  return $.ajax({
-    url: config.apiOrigin + '/games',
-    method: 'POST',
-    headers: {
-      Authorization: `Token token=${store.user.token}`,
-    },
-    data,
-  });
-};
-
-const index = function () {
+// These web requests get all the games, create a game on the server,
+// get a specific game by its id, and update the server with every move made and if the game is over
+const getIndex = function () {
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
+    },
+  });
+};
+
+const create = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'POST',
     headers: {
       Authorization: `Token token=${store.user.token}`,
     },
@@ -37,27 +38,41 @@ const show = function (id) {
 
 const update = function (index, value) {
   return $.ajax({
-    url: config.apiOrigin + '/games/' + store.id,
+    url: config.apiOrigin + '/games/' + gameStore.game.id,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`,
     },
     data: {
-      game: {
-        cell: {
-          index: index,
-          value: game.currentPlayer,
+        "game": {
+          "cell": {
+            "index": index,
+            "value": value,
+          },
         },
-        over: gameOver,
       },
+  });
+};
+
+const updateGameStatus = function (over) {
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + gameStore.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: `Token token=${store.user.token}`,
     },
+    data: {
+        "game": {
+          "over": over,
+        },
+      },
   });
 };
 
 module.exports = {
-  index,
-  show,
+  getIndex,
   create,
+  show,
   update,
-  // game,
+  updateGameStatus,
 };
