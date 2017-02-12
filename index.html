@@ -153,10 +153,10 @@
 
 <body class="container-fluid.no-padding">
   <div class="center-buttons">
-  <!-- <button type="button" class="btn btn-primary create-board-button" id="new game">New Battle</button> -->
+
   </div>
   <!-- These are the containers for the gameboard.  -->
-  <div class="center gameboard" id="showBoard">
+  <div class="gameboard hidden" id="showBoard">
     <div class="col-xs-12 row">
       <div class="col-xs-4 box" id="c0"></div>
       <div class="col-xs-4 box" id="c1"></div>
@@ -179,7 +179,7 @@
 
   <div class="right-column">
 
-    <div class="scoreboard" id="score">
+    <div class="scoreboard hidden" id="score">
       <!-- game result imgs -->
       <img class="pika hidden" id="pikachu-win" src="http://i.imgur.com/7CLrRbvm.jpg" alt="pikachu">
       <img class="osha hidden" id="oshawott-win" src="http://i.imgur.com/eljRku8m.jpg" alt="oshawott">
@@ -201,13 +201,13 @@
     </div>
 
     <!-- Game outcome msg -->
-    <div class="status-box" id="message-box"></div>
+    <div class="status-box hidden" id="message-box"></div>
 
     <!-- this div houses next step for player -->
     <div class="game-buttons">
       <!-- creates new game -->
       <div class="rematch new-game">
-        <button type="button" class="btn btn-success create-new-game" id="new-battle">
+        <button type="button" class="btn btn-success create-new-game hidden" id="new-battle">
       New Battle
       </button>
       </div>

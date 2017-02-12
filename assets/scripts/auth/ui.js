@@ -46,19 +46,26 @@ const signInSuccess = () => {
   $('#sign-out').removeClass('hidden');
   $('#game-log').removeClass('hidden');//corresponds to game history button
   $('#signInModal').modal('hide');
+  $('#new-battle').removeClass('hidden');
+  // $('.scoreboard').removeClass('hidden');
+  // $('.status-box').removeClass('hidden');
 };
 
 // On sign out, hide game board elements
 
 const signOutSuccess = () => {
-  $('#prompt').text('Sign Out Successful!');
-  $('.create-board-button').addClass('hidden');
+  $('#prompt').text('Sign Out Successful! Please Register or Sign In to Play Again!');
+  // $('.create-board-button').addClass('hidden');
   $('#game-log').addClass('hidden');
+  $('.gameboard').addClass('hidden');
   $('#signUpButton').removeClass('hidden');
   $('#signInButton').removeClass('hidden');
   $('#changePwButton').addClass('hidden');
   $('#sign-out').addClass('hidden');
   $('#right-column').addClass('hidden');
+  $('#new-battle').addClass('hidden');
+  $('.scoreboard').addClass('hidden');
+  $('.status-box').addClass('hidden');
 };
 
 module.exports = {

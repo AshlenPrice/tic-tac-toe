@@ -91,15 +91,12 @@ $('.box').empty();
 this.gameOver = false;
 this.currentPlayer = 'X';
 
+$('.gameboard').removeClass('hidden');
+$('.scoreboard').removeClass('hidden');
+$('.status-box').removeClass('hidden');
 };
 
 //
-// const newGame = new Game();
-//
-// $('#new-battle').on('click', function () {
-// this.resetGameBoard();
-// $('#message-box').text(' ');
-// });
 
 
 
