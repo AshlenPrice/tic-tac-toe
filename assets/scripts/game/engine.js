@@ -90,6 +90,7 @@ Game.prototype.resetGameBoard = function() {
 $('.box').empty();
 this.gameOver = false;
 this.currentPlayer = 'X';
+
 };
 
 //

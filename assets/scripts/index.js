@@ -6,7 +6,7 @@ const config = require('./config');
 
 const gameAPI = require('./game/api');
 const gameEvents = require('./game/events');
-const gameEngine = require('./game/engine')
+const gameEngine = require('./game/engine');
 // auth events
 const gameCliks= require('./game/game-clicks');
 const authEvents = require('./auth/events.js');
@@ -21,6 +21,6 @@ $(() => {
 $(() => {
   authEvents.addHandlers();
   gameEvents.addAjaxHandlers();
-  $('#new-battle').on('click', gameEngine.Game.resetGameBoard );
+  // $('#new-battle').on('click', gameEngine.Game.resetGameBoard );
 
 });

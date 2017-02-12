@@ -9,16 +9,20 @@ const store = require('../store');
 
 //when clicking new game, this runs resetGameBoard function
 const onCreate = function (event) {
+  if (!store.user){
+    console.log('reject if user is not signed in');
+    return;
+  }
   console.log('creating game');
-  event.preventDefault();
+  // event.preventDefault();
   gameApi.create()
     .then((response) => {
-      return store.game;
       store.game = response.game;
+      return store.game;
     })
     .then(gameUi.createSuccess)
     .catch(gameUi.failure);
-     engine.Game.resetGameBoard();
+    //  engine.Game.resetGameBoard();
 };
 
 

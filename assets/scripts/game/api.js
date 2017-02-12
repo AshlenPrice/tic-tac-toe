@@ -16,15 +16,14 @@ const getIndex = function () {
   });
 };
 
-const create = function (data) {
-  console.log(data);
+const create = function () {
+
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'POST',
     headers: {
       Authorization: `Token token=${store.user.token}`,
     },
-    data
   });
 };
 

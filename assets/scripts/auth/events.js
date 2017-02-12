@@ -7,8 +7,6 @@ const ui = require('./ui');
 const store = require('../store');
 const gameEvents = require('../game/events')
 
-
-
 // these functions will run the server requests in the api.js file
 
 const onSignUp = function (event) {
@@ -30,6 +28,10 @@ const onSignIn = function (event) {
       store.user = response.user;
       // console.log('store.user', store.user);
       return store.user;
+    })
+    .then(()=>{
+      console.log('sigIn onCreate');
+      gameEvents.onCreate();
     })
     .then(ui.signInSuccess)
     .catch(ui.signInFail);

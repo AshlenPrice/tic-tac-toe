@@ -53,11 +53,11 @@ const signInSuccess = () => {
 const signOutSuccess = () => {
   $('#prompt').text('Sign Out Successful!');
   $('.create-board-button').addClass('hidden');
-  // $('#game-log').addClass('hidden');
+  $('#game-log').addClass('hidden');
   $('#signUpButton').removeClass('hidden');
   $('#signInButton').removeClass('hidden');
   $('#changePwButton').addClass('hidden');
-  $('#signOutButton').addClass('hidden');
+  $('#sign-out').addClass('hidden');
   $('#right-column').addClass('hidden');
 };
 
