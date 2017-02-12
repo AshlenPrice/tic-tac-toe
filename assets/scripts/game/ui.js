@@ -6,15 +6,15 @@ const success = () => {
 };
 
 const createSuccess = () => {
-  $('#promt').text('New Game Successfully Created');
+  $('#promt').text('Battle Intiated');
 };
 
 const onPatchSuccess = () => {
-  $('#promt').text('Game Updated');
+  $('#promt').text('Battle Updated');
 };
 
 const failure = () => {
-  $('#promt').text('There seems to have been an error');
+  $('#promt').text("Uh-Oh Something's not right!");
 };
 
 module.exports = {

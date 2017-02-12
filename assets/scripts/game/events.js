@@ -11,8 +11,7 @@ const store = require('../store');
 const onCreate = function (event) {
   console.log('creating game');
   event.preventDefault();
-
-    gameApi.create(data)
+  gameApi.create(data)
     .then((response) => {
       store.game = response.game;
     })
@@ -53,7 +52,7 @@ const totalGamesPlayed = function (event) {
 const addAjaxHandlers = () => {
   $('#get-index').on('submit', onIndex);
   $('#new-battle').on('click', onCreate);
-  $('#showGameById').on('submit', onShow);
+  $('#log').on('submit', onShow);
   $('#total-games-played').on('click', totalGamesPlayed);
 };
 

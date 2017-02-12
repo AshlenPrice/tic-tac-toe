@@ -24,7 +24,7 @@ const create = function (data) {
     headers: {
       Authorization: `Token token=${store.user.token}`,
     },
-    data,
+    data
   });
 };
 
