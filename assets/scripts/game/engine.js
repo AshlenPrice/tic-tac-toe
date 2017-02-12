@@ -45,7 +45,7 @@ Game.prototype.setMove = function(i) {
   //is a condition that means is the game space is empty and it allows the rest of the funtion to run.
   if (this.board[i] === '' && !this.gameOver) {
     this.board[i] = this.currentPlayer;
-    this.winner()
+    this.winner();
     this.fullBoard();
     this.changePlayer();
     return true;
