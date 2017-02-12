@@ -11,7 +11,7 @@ const signUpSuccess = () => {
 
 const signUpFail = () => {
   $('#sign-up-prompt').text
-  ('Something is not right. Please Try Again!');
+  ('Uh-Oh. Please Try Again!');
 };
 
 const signInFail = () => {
@@ -58,7 +58,7 @@ const signOutSuccess = () => {
   $('#signInButton').removeClass('hidden');
   $('#changePwButton').addClass('hidden');
   $('#signOutButton').addClass('hidden');
-
+  $('#right-column').addClass('hidden');
 };
 
 module.exports = {

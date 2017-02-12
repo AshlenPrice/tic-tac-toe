@@ -1,7 +1,7 @@
 'use strict';
 console.log('file running');
 const getFormFields = require('../../../lib/get-form-fields');
-// const engine = require('./engine');
+const engine = require('./engine');
 const gameApi = require('./api');
 const gameUi = require('./ui');
 const store = require('../store');
@@ -11,12 +11,14 @@ const store = require('../store');
 const onCreate = function (event) {
   console.log('creating game');
   event.preventDefault();
-  gameApi.create(data)
+  gameApi.create()
     .then((response) => {
+      return store.game;
       store.game = response.game;
     })
     .then(gameUi.createSuccess)
     .catch(gameUi.failure);
+     engine.Game.resetGameBoard();
 };
 
 
@@ -41,9 +43,9 @@ const totalGamesPlayed = function (event) {
   event.preventDefault();
   gameApi.getIndex()
     .then((response) => {
-      gameStore.games = response.games;
-      $('#show-total-games').text('You have played ' + gameStore.games.length + ' games.');
-      return gameStore.games.length;
+      store.games = response.games;
+      $('#battle-log').text('You have played ' + store.games.length + ' games.');
+      return store.games.length;
     })
     .then(gameUi.success)
     .catch(gameUi.failure);

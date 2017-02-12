@@ -22,11 +22,8 @@ const Game = function() {
     [2, 4, 6] // diag
   ];
 };
-//prototype the methods the of the game
 
-// Need to determine if the board is full.
 // full board function
-
 Game.prototype.fullBoard = function() {
   if (!this.gameOver) {
     for (let i = 0; i < 9; i++) {
@@ -41,9 +38,6 @@ Game.prototype.fullBoard = function() {
   }
 };
 
-// Game.prototype.fullBoard = function() {
-//   return !this.board.includes('');
-// };
 
 
 //establishes who moves.
@@ -51,7 +45,7 @@ Game.prototype.setMove = function(i) {
   //is a condition that means is the game space is empty and it allows the rest of the funtion to run.
   if (this.board[i] === '' && !this.gameOver) {
     this.board[i] = this.currentPlayer;
-    this.winner();
+    this.winner()
     this.fullBoard();
     this.changePlayer();
     return true;
