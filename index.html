@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Pik-Pak-Pokémon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Nova+Mono" rel="stylesheet">
+</head>
+<header>
+  <!-- <a href="http://fontmeme.com/pokemon-font/">
+    <img src="http://fontmeme.com/permalink/170129/b3d41c6e772d39fbbb66c163ece2b307.png" alt="pokemon-font" border="0">
+  </a> -->
+  <img src="http://fontmeme.com/permalink/170129/b3d41c6e772d39fbbb66c163ece2b307.png" alt="pokemon-font" border="0" class="banner">
+  <!-- Buttons for user account informantion, they have corresponding modals -->
+  <div class="user-account">
+    <button type="button" class="btn btn-primary" id="signUpButton" data-toggle="modal" data-target="#signUpModal">
+    Register for Battle!
+    </button>
+    <button type="button" class="btn btn-primary" id="signInButton" data-toggle="modal" data-target="#signInModal">
+    Sign In to Battle!
+    </button>
+    <button type="button" class="btn btn-primary hidden" id="changePwButton" data-toggle="modal" data-target="#changePwModal">
+    Change Password!
+    </button>
+    <button type="button" class="btn btn-primary hidden" id="sign-out">
+        Sign Out!
+      </button>
+  </div>
+
+  <!-- User account Modals -->
+    <!-- Sign-Up -->
+  <div class="registration">
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            <h4 class="modal-title" id="SignUpModalLabel">Register for Battle!</h4>
+          </div>
+          <div class="modal-body">
+            <form id="sign-up">
+              <fieldset>
+                <legend>Sign up!</legend>
+                <label>
+              Email
+              <input type="text" name="credentials[email]">
+            </label>
+                <label>
+              Password
+              <input type="password" name="credentials[password]">
+            </label>
+                <label>
+              Password Confirmation
+              <input type="password" name="credentials[password_confirmation]">
+            </label>
+                <input type="submit" name="submit" value="Sign up!">
+              </fieldset>
+              <div class="form-message" id="sign-up-prompt"></div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Sign in modal -->
+
+    <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            <h4 class="modal-title" id="SignInModalLabel">Sing In To Battle!</h4>
+          </div>
+          <div class="modal-body">
+            <form id="sign-in">
+              <fieldset>
+                <legend>Sign In!</legend>
+                <label>
+              Email
+              <input type="text" name="credentials[email]">
+            </label>
+                <label>
+              Password
+              <input type="password" name="credentials[password]">
+            </label>
+                <input type="submit" name="submit" value="Sign In!">
+              </fieldset>
+              <div class="form-message" id="sign-in-prompt"></div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- change password modal -->
+
+    <div class="modal fade" id="changePwModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            <h4 class="modal-title" id="ChangePwModalLabel">Change Your Password!</h4>
+          </div>
+          <div class="modal-body">
+            <form id="change-password">
+              <fieldset>
+                <legend>Change Password!</legend>
+                <label>
+              Current Password
+              <input type="password" type="current password" name="passwords[old]">
+            </label>
+                <label>
+              New Password
+              <input type="password" type="new password" name="passwords[new]">
+            </label>
+                <input type="submit" name="submit" value="Change Password!">
+              </fieldset>
+              <div class="form-message" id="change-pw-prompt"></div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- <form id="sign-out">
+      <fieldset>
+      <legend>Sign Out!</legend>
+      <input type="submit" name="submit" value="Sign Out!">
+    </fieldset>
+    </form> -->
+  </div>
+
+</header>
+
+<body class="container-fluid.no-padding">
+  <div class="center-buttons">
+
+  </div>
+  <!-- These are the containers for the gameboard.  -->
+  <div class="gameboard hidden" id="showBoard">
+    <div class="col-xs-12 row">
+      <div class="col-xs-4 box" id="c0"></div>
+      <div class="col-xs-4 box" id="c1"></div>
+      <div class="col-xs-4 box" id="c2"></div>
+    </div>
+    <div class="col-xs-12 row">
+      <div class="col-xs-4 box" id="c3"></div>
+      <div class="col-xs-4 box" id="c4"></div>
+      <div class="col-xs-4 box" id="c5"></div>
+    </div>
+    <div class="col-xs-12 row">
+      <div class="col-xs-4 box" id="c6"></div>
+      <div class="col-xs-4 box" id="c7"></div>
+      <div class="col-xs-4 box" id="c8"></div>
+    </div>
+  </div>
+
+
+  <div class="statusbox" id="prompt">Please Sign Up or Sign In to play.</div>
+
+  <div class="right-column">
+
+    <div class="scoreboard hidden" id="score">
+      <!-- game result imgs -->
+      <img class="pika hidden" id="pikachu-win" src="http://i.imgur.com/7CLrRbvm.jpg" alt="pikachu">
+      <img class="osha hidden" id="oshawott-win" src="http://i.imgur.com/eljRku8m.jpg" alt="oshawott">
+      <img class="hidden" id="Pokemon-draw" src="assets/images/Pokemon-PNG-Pic.png" alt="Pokemon">
+
+      <!-- profile imgs -->
+      <div class="pokemon">
+        <div class="pikachu">
+          <img class="pika-profile" src="http://i.imgur.com/x7GwxhCm.jpg" alt="Pikachu-rest">
+        </div>
+      </div>
+      <div class="pokemon">
+        <div class="oshawott">
+          <img class="osha-profile" src="http://i.imgur.com/WkRgJSMm.jpg" alt="Oshawott-rest">
+        </div>
+      </div>
+    </div>
+
+    <!-- Game outcome msg -->
+    <div class="status-box hidden" id="message-box"></div>
+
+    <!-- this div houses next step for player -->
+    <div class="game-buttons">
+      <!-- creates new game -->
+      <div class="rematch new-game">
+        <button type="button" class="btn btn-success create-new-game hidden" id="new-battle">
+      New Battle
+      </button>
+      </div>
+      <!--Button to show battle log(past games played)  -->
+      <div class="battle-log game-history">
+        <button type="button" class="btn btn-success show-games hidden" id="game-log">
+      See your battle log!
+      </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <footer>
+    Hope you enjoyed the battle! Come back to train again soon!
+  </footer> -->
+
+</body>
+
+</html>
