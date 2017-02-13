@@ -1,5 +1,4 @@
 'use strict';
-console.log('file running');
 
 const setAPIOrigin = require('../../lib/set-api-origin');
 const config = require('./config');

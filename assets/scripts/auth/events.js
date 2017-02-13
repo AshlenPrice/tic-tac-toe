@@ -1,11 +1,10 @@
 'use strict';
-console.log('file running');
 
 const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 const store = require('../store');
-const gameEvents = require('../game/events');
+// const gameEvents = require('../game/events');
 
 // these functions will run the server requests in the api.js file
 
@@ -28,13 +27,8 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then((response)=> {
       store.user = response.user;
-      // console.log('store.user', store.user);
       return store.user;
     })
-    // .then(()=>{
-    //   console.log('sigIn onCreate');
-    //   gameEvents.onCreate();
-    // })
     .then(ui.signInSuccess)
     .catch(ui.signInFail);
     $('#sign-in')[0].reset();

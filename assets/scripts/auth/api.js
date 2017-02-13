@@ -1,5 +1,4 @@
 'use strict';
-console.log('file running');
 
 const config = require('../config');
 const store = require('../store');
@@ -14,7 +13,7 @@ const signUp = function (data) {
 };
 
 const signIn = function (data) {
-  console.log(data);
+
   return $.ajax({
     url: config.apiOrigin + '/sign-in',
     method: 'POST',
@@ -23,8 +22,6 @@ const signIn = function (data) {
 };
 
 const changePassword = function (data) {
-  console.log(data);
-  console.log(store.user.id);
   return $.ajax({
     url: `${config.apiOrigin}/change-password/${store.user.id}`,
     method: 'PATCH',

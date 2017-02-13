@@ -20,14 +20,12 @@ const signInFail = () => {
 };
 
 const changePwSuccess = () => {
-  console.log("success");
   $('#change-pw-prompt').text
   ('Password Changed Successfully!');
   $('#changePwModal').modal('hide');
 };
 
 const changePwFail = (data) => {
-  console.log('fail', data);
   $('#change-pw-prompt').text
   ('Uh-Oh! Please Try Again!');
 };
@@ -66,6 +64,16 @@ const signOutSuccess = () => {
   $('#new-battle').addClass('hidden');
   $('.scoreboard').addClass('hidden');
   $('.status-box').addClass('hidden');
+  $('#change-pw-prompt').text
+  (' ');
+  $('#sign-up-prompt').text
+  (' ');
+  $('#sign-in-prompt').text
+  (' ');
+
+
+
+
 };
 
 module.exports = {

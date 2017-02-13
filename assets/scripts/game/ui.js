@@ -1,13 +1,11 @@
 'use strict';
 
 
-const success = () => {
-  console.log('success fire');
-  $('#prompt').text('Action Successful');
-};
+// const success = () => {
+//   $('#prompt').text('Action Successful');
+// };
 
 const createSuccess = () => {
-  console.log('create success fire');
   $('#prompt').text('Battle Intiated');
 };
 
@@ -21,7 +19,7 @@ const failure = () => {
 
 module.exports = {
   failure,
-  success,
+  // success,
   createSuccess,
   onPatchSuccess,
 };

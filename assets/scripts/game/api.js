@@ -1,5 +1,4 @@
 'use strict';
-console.log('gm_api file running');
 const config = require('../config.js');
 const store = require('../store.js');
 const engine = require('./engine');
@@ -38,8 +37,6 @@ const create = function () {
 // };
 
 const update = function (index, value) {
-console.log('updated server', index);
-console.log('updated server', value);
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',

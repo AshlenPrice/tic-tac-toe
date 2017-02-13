@@ -1,5 +1,4 @@
 'use strict';
-console.log('file running');
 const getFormFields = require('../../../lib/get-form-fields');
 const engine = require('./engine');
 const gameApi = require('./api');
@@ -10,11 +9,8 @@ const store = require('../store');
 //when clicking new game, this runs resetGameBoard function
 const onCreate = function (event) {
   if (!store.user){
-    // console.log('reject if user is not signed in');
     return;
   }
-  // console.log('creating game');
-  // event.preventDefault();
   gameApi.create()
     .then((response) => {
       store.game = response.game;
@@ -44,12 +40,11 @@ const onIndex = function (event) {
 // };
 
 const totalGamesPlayed = function (event) {
-  console.log('are you working?');
   event.preventDefault();
   gameApi.getIndex()
     .then((response) => {
       store.games = response.games;
-      $('#message-box').text('You have had ' + store.games.length + ' battles.');
+      $('#prompt').text('You have had ' + store.games.length + ' battles.');
       return store.games.length;
     })
     .then(gameUi.success)
