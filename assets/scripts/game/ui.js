@@ -2,19 +2,21 @@
 
 
 const success = () => {
-  $('#promt').text('Action Successful');
+  console.log('success fire');
+  $('#prompt').text('Action Successful');
 };
 
 const createSuccess = () => {
-  $('#promt').text('Battle Intiated');
+  console.log('create success fire');
+  $('#prompt').text('Battle Intiated');
 };
 
 const onPatchSuccess = () => {
-  $('#promt').text('Battle Updated');
+  $('#prompt').text('Battle Updated');
 };
 
 const failure = () => {
-  $('#promt').text("Uh-Oh Something's not right!");
+  $('#prompt').text("Uh-Oh Something's not right!");
 };
 
 module.exports = {
