@@ -1,5 +1,5 @@
 'use strict';
-const gameApi = require('./api');
+// const gameApi = require('./api');
 const gameUi = require('./ui');
 
 console.log('engine-works');
@@ -47,6 +47,8 @@ Game.prototype.setMove = function(i) {
     this.board[i] = this.currentPlayer;
     this.winner();
     this.fullBoard();
+    const gameApi = require('./api');
+    gameApi.update(i, this.currentPlayer);
     this.changePlayer();
     return true;
   }
@@ -102,5 +104,6 @@ $('.status-box').removeClass('hidden');
 
 module.exports = {
   Game,
+
   // newGame
 };

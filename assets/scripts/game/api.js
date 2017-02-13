@@ -38,6 +38,8 @@ const show = function (id) {
 };
 
 const update = function (index, value) {
+console.log('updated server', index);
+console.log('updated server', value);
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
@@ -71,7 +73,7 @@ const updateGameStatus = function (over) {
 };
 
 module.exports = {
-  getIndex,
+  // getIndex,
   create,
   show,
   update,

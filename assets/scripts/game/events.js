@@ -10,10 +10,10 @@ const store = require('../store');
 //when clicking new game, this runs resetGameBoard function
 const onCreate = function (event) {
   if (!store.user){
-    console.log('reject if user is not signed in');
+    // console.log('reject if user is not signed in');
     return;
   }
-  console.log('creating game');
+  // console.log('creating game');
   // event.preventDefault();
   gameApi.create()
     .then((response) => {
@@ -48,7 +48,7 @@ const totalGamesPlayed = function (event) {
   gameApi.getIndex()
     .then((response) => {
       store.games = response.games;
-      $('#battle-log').text('You have played ' + store.games.length + ' games.');
+      $('#battle-log').text('You have battled' + store.games.length + ' many times.');
       return store.games.length;
     })
     .then(gameUi.success)
@@ -59,7 +59,7 @@ const addAjaxHandlers = () => {
   $('#get-index').on('submit', onIndex);
   $('#new-battle').on('click', onCreate);
   $('#log').on('submit', onShow);
-  $('#total-games-played').on('click', totalGamesPlayed);
+  $('#message-box').on('click', totalGamesPlayed);
 };
 
 module.exports = {
