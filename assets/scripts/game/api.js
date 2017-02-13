@@ -27,15 +27,15 @@ const create = function () {
   });
 };
 
-const show = function (id) {
-  return $.ajax({
-    url: config.apiOrigin + '/games/' + id,
-    method: 'GET',
-    headers: {
-      Authorization: `Token token=${store.user.token}`,
-    },
-  });
-};
+// const show = function (id) {
+//   return $.ajax({
+//     url: config.apiOrigin + '/games/' + id,
+//     method: 'GET',
+//     headers: {
+//       Authorization: `Token token=${store.user.token}`,
+//     },
+//   });
+// };
 
 const update = function (index, value) {
 console.log('updated server', index);
@@ -73,9 +73,9 @@ const updateGameStatus = function (over) {
 };
 
 module.exports = {
-  // getIndex,
+  getIndex,
   create,
-  show,
+  // show,
   update,
   updateGameStatus,
 };

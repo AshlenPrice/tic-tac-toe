@@ -34,21 +34,22 @@ const onIndex = function (event) {
 };
 
 
-
-const onShow = function (event) {
-  event.preventDefault();
-  let id = parseInt($('#game-id').val());
-  gameApi.show(id)
-    .then(gameUi.success)
-    .catch(gameUi.failure);
-};
+//
+// const onShow = function (event) {
+//   event.preventDefault();
+//   let id = parseInt($('#game-id').val());
+//   gameApi.show(id)
+//     .then(gameUi.success)
+//     .catch(gameUi.failure);
+// };
 
 const totalGamesPlayed = function (event) {
+  console.log('are you working?');
   event.preventDefault();
   gameApi.getIndex()
     .then((response) => {
       store.games = response.games;
-      $('#battle-log').text('You have battled' + store.games.length + ' many times.');
+      $('#message-box').text('You have had ' + store.games.length + ' battles.');
       return store.games.length;
     })
     .then(gameUi.success)
@@ -59,12 +60,12 @@ const addAjaxHandlers = () => {
   $('#get-index').on('submit', onIndex);
   $('#new-battle').on('click', onCreate);
   // $('#log').on('submit', onShow);
-  $('#message-box').on('click', totalGamesPlayed);
+  $('#game-log').on('click', totalGamesPlayed);
 };
 
 module.exports = {
   addAjaxHandlers,
   onIndex,
   onCreate,
-  onShow,
+  // onShow,
 };
