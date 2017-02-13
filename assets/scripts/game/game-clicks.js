@@ -20,9 +20,13 @@ $('.box').on('click', function(){
   let currentMove = game.currentPlayer;
   let isValid = game.setMove(boardIndex);
   if (isValid === true) {
-    $(this).text(currentMove);
+    // $(this).text(currentMove);
+    if(currentMove === 'X'){
+    $(this).prepend('<img src="http://i.imgur.com/7CLrRbvm.jpg" class="game-tile" />');
+  } else {
+    $(this).prepend('<img src= "http://i.imgur.com/eljRku8m.jpg" class= "game-tile"/>');
+    }
   }
-
 });
 
 $('#new-battle').on('click', function (){

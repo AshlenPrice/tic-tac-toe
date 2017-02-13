@@ -59,7 +59,8 @@ return false;
 // this function should change the player after a move has been made by the opposite player
 
 Game.prototype.changePlayer = function() {
-  if (this.currentPlayer === 'X') {
+  if (this.currentPlayer === 'X')
+   {
     this.currentPlayer = 'O';
   } else {
     this.currentPlayer = 'X';
@@ -80,7 +81,8 @@ Game.prototype.winner = function() {
     (this.board[0] === this.currentPlayer && this.board[4] === this.currentPlayer && this.board[8] === this.currentPlayer) ||
     (this.board[2] === this.currentPlayer && this.board[4] === this.currentPlayer && this.board[6] === this.currentPlayer)) {
       //Not working - not sure why.
-      $('#message-box').text(this.currentPlayer + ' is the WINNER');
+      let pikaOrOsh = this.currentPlayer === "X" ? "Pikachu" : "Oshawott";
+      $('#message-box').text(pikaOrOsh + ' is the WINNER');
     this.gameOver = true;
       }
 

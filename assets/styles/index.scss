@@ -44,6 +44,10 @@ body {
   text-align: center;
 }
 
+.game-tile {
+  width: 100%;
+}
+
 .gameboard {
   display: inline-block;
   float: left;
@@ -62,7 +66,7 @@ body {
   display: inline-block;
   height: 140px;
   margin: 5px;
-  padding: 40px;
+  padding: 5px;
   text-align: center;
   width: 20%;
 
