@@ -18,6 +18,8 @@ const onSignUp = function (event) {
     .then(ui.signUpSuccess)
     .catch(ui.signUpFail)
     ;
+    $('#sign-up')[0].reset();
+
 };
 
 const onSignIn = function (event) {
@@ -35,6 +37,9 @@ const onSignIn = function (event) {
     // })
     .then(ui.signInSuccess)
     .catch(ui.signInFail);
+    $('#sign-in')[0].reset();
+
+
 };
 
 const onChangePassword = function (event) {
@@ -44,8 +49,8 @@ const onChangePassword = function (event) {
 
   api.changePassword(data)
     .then(ui.changePwSuccess)
-    .catch(ui.changePwFail)
-    ;
+    .catch(ui.changePwFail);
+    $('#change-password')[0].reset();
 };
 
 const onSignOut = function (event) {

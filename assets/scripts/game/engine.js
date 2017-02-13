@@ -1,5 +1,4 @@
 'use strict';
-// const gameApi = require('./api');
 const gameUi = require('./ui');
 
 console.log('engine-works');
