@@ -58,7 +58,7 @@ const totalGamesPlayed = function (event) {
 const addAjaxHandlers = () => {
   $('#get-index').on('submit', onIndex);
   $('#new-battle').on('click', onCreate);
-  $('#log').on('submit', onShow);
+  // $('#log').on('submit', onShow);
   $('#message-box').on('click', totalGamesPlayed);
 };
 

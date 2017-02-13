@@ -11,6 +11,7 @@ const Game = function() {
   this.currentGameMoves = 0;
   this.activeGame = true;
   this.gameOver = false;
+  this.gameApi = require('./api');
   this.possibleWins = [
     [0, 1, 2],
     [3, 4, 5],
@@ -21,6 +22,7 @@ const Game = function() {
     [0, 4, 8],
     [2, 4, 6] // diag
   ];
+
 };
 
 // full board function
@@ -47,8 +49,7 @@ Game.prototype.setMove = function(i) {
     this.board[i] = this.currentPlayer;
     this.winner();
     this.fullBoard();
-    const gameApi = require('./api');
-    gameApi.update(i, this.currentPlayer);
+    this.gameApi.update(i, this.currentPlayer);
     this.changePlayer();
     return true;
   }
@@ -82,7 +83,9 @@ Game.prototype.winner = function() {
       $('#message-box').text(this.currentPlayer + ' is the WINNER');
     this.gameOver = true;
       }
-      // gameApi.updateGameStatus(!this.gameOver);
+
+      this.gameApi.updateGameStatus(!this.gameOver);
+
 };
 
 //this resets the gameboard
