@@ -116,8 +116,8 @@ body {
 
 .game-buttons {
   margin: 15px;
-  margin-top: 5px;
   margin-bottom: 10px;
+  margin-top: 5px;
   padding: 10px;
 }
 
@@ -138,18 +138,18 @@ body {
   padding: 5px 5px;
 }
 
-footer {
-  background-color: $poke-light-gray;
-  bottom: 0;
-  clear: both;
-  color: $white;
-  padding-bottom: $padding;
-  padding-top: $padding;
-  position: fixed;
-  text-align: center;
-  width: 100%;
+// footer {
+//   background-color: $poke-light-gray;
+//   bottom: 0;
+//   clear: both;
+//   color: $white;
+//   padding-bottom: $padding;
+//   padding-top: $padding;
+//   position: fixed;
+//   text-align: center;
+//   width: 100%;
 
-}
+// }
 
 .pokemon {
   float: left;

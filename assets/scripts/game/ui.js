@@ -5,9 +5,9 @@
 //   $('#prompt').text('Action Successful');
 // };
 
-const createSuccess = () => {
-  $('#prompt').text('Battle Intiated');
-};
+// const createSuccess = () => {
+//   $('#prompt').text('Battle Intiated');
+// };
 
 const onPatchSuccess = () => {
   $('#prompt').text('Battle Updated');
